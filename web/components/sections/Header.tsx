@@ -21,7 +21,7 @@ const Header: NextPage = () => {
   return (
     <section id="header">
       <Container>
-        <div className={classnames(['content', showHeader ? 'show' : 'hide'])}>
+        <div className={classnames(['content', showHeader ? 'hide' : 'show'])}>
           [HEADER]
         </div>
       </Container>
