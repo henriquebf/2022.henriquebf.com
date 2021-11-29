@@ -1,7 +1,12 @@
 {
-  "base_bg_color": "#fff",
-  "base_bg_color_inverted": "#222",
-  "base_text_color": "#222",
-  "base_text_color_inverted": "#fff",
-  "base_medium_color": "#aaa"
+  "light": {
+    "base_bg_color": "#fff",
+    "base_text_color": "#222",
+    "base_medium_color": "#aaa"
+  },
+  "dark": {
+    "base_bg_color": "#222",
+    "base_text_color": "#fff",
+    "base_medium_color": "#aaa"
+  }
 }

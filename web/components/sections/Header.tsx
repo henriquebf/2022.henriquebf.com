@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import zIndexes from '@/config/zIndexes.json';
+import colors from '@/config/colors.json';
 import { classnames } from '@/helpers/classnameHelper';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/shared/Container';
@@ -31,7 +32,13 @@ const Header: NextPage = () => {
           top: 20px;
           width: 100%;
           z-index: ${zIndexes.header};
-          color: #fff;
+          color: ${colors.light.base_text_color};
+        }
+
+        @media (prefers-color-scheme: dark) {
+          #header {
+            color: ${colors.dark.base_text_color};
+          }
         }
 
         .content {
