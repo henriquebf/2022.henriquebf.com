@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import colors from '@/config/colors.json';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,13 +19,20 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
 
         html {
-          background-color: #fff;
           box-sizing: border-box;
-          color: #222;
           font-family: 'Share Tech Mono', Helvetica;
           font-size: 16px;
           font-weight: normal;
           line-height: 1.5;
+          color: ${colors.light.base_text_color};
+          background-color: ${colors.light.base_bg_color};
+        }
+
+        @media (prefers-color-scheme: dark) {
+          html {
+            color: ${colors.dark.base_text_color};
+            background-color: ${colors.dark.base_bg_color};
+          }
         }
 
         a {
