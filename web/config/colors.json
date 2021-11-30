@@ -1,12 +1,20 @@
 {
   "light": {
-    "base_bg_color": "#fff",
-    "base_text_color": "#222",
-    "base_medium_color": "#aaa"
+    "base_bg_primary_color": "#fafafa",
+    "base_bg_primary_gradient": "#fafafa, rgba(250, 250, 250, 0.9) 50%, rgba(250, 250, 250, 0)",
+    "base_bg_secondary_color": "#fafafa",
+    "base_text_primary_color": "#222",
+    "base_text_secondary_color": "#666",
+    "base_text_active_color": "#222",
+    "base_border_color": "#eee"
   },
   "dark": {
-    "base_bg_color": "#222",
-    "base_text_color": "#fff",
-    "base_medium_color": "#aaa"
+    "base_bg_primary_color": "#222",
+    "base_bg_primary_gradient": "#222, rgba(34, 34, 34, 0.9) 50%, rgba(34, 34, 34, 0)",
+    "base_bg_secondary_color": "#2a2a2a",
+    "base_text_primary_color": "#fff",
+    "base_text_secondary_color": "#aaa",
+    "base_text_active_color": "#fff",
+    "base_border_color": "#444"
   }
 }

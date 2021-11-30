@@ -3,19 +3,20 @@ import zIndexes from '@/config/zIndexes.json';
 import colors from '@/config/colors.json';
 import Container from '@/components/layout/Container';
 
-const Footer: NextPage = () => {
+const Active: NextPage = () => {
   return (
-    <section id="footer">
-      <Container>[FOOTER]</Container>
+    <section id="active">
+      <Container>[ACTIVE PROJECTS]</Container>
       <style jsx>{`
-        #footer {
+        #active {
           position: relative;
           z-index: ${zIndexes.section};
-          height: 220px;
+          background-color: ${colors.light.base_bg_secondary_color};
         }
 
         @media (prefers-color-scheme: dark) {
-          #footer {
+          #active {
+            background-color: ${colors.dark.base_bg_secondary_color};
           }
         }
       `}</style>
@@ -23,4 +24,4 @@ const Footer: NextPage = () => {
   );
 };
 
-export default Footer;
+export default Active;

@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '@/components/sections/Header';
 import Intro from '@/components/sections/Intro';
-import Current from '@/components/sections/Current';
+import Projects from '@/components/sections/Active';
 import Timeline from '@/components/sections/Timeline';
 import Footer from '@/components/sections/Footer';
 
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <Intro />
-      <Current />
+      <Projects />
       <Timeline />
       <Footer />
     </>

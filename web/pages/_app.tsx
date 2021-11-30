@@ -24,14 +24,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           font-size: 16px;
           font-weight: normal;
           line-height: 1.5;
-          color: ${colors.light.base_text_color};
-          background-color: ${colors.light.base_bg_color};
+          color: ${colors.light.base_text_primary_color};
+          background-color: ${colors.light.base_bg_primary_color};
         }
 
         @media (prefers-color-scheme: dark) {
           html {
-            color: ${colors.dark.base_text_color};
-            background-color: ${colors.dark.base_bg_color};
+            color: ${colors.dark.base_text_primary_color};
+            background-color: ${colors.dark.base_bg_primary_color};
           }
         }
 
