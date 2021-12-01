@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import zIndexes from '@/config/zIndexes.json';
 import colors from '@/config/colors.json';
+import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import TimelineItem from '@/components/shared/TimelineItem';
 
@@ -130,9 +131,25 @@ const Timeline: NextPage = () => {
   return (
     <section id="timeline">
       <Container>
-        {timelineItems.map((item, i) => (
-          <TimelineItem key={i} item={item} />
-        ))}
+        <div className="content">
+          {timelineItems.map((item, i) => {
+            if (i % 2 === 0) {
+              return (
+                <div key={i} className="wrapper">
+                  <TimelineItem item={item} />
+                  <div />
+                </div>
+              );
+            } else {
+              return (
+                <div key={i} className="wrapper">
+                  <div />
+                  <TimelineItem item={item} />
+                </div>
+              );
+            }
+          })}
+        </div>
       </Container>
       <style jsx>{`
         #timeline {
@@ -142,10 +159,25 @@ const Timeline: NextPage = () => {
           border-bottom: 1px solid ${colors.light.base_border_color};
         }
 
+        .content {
+          padding: 20px 0;
+        }
+
+        .wrapper {
+          display: grid;
+          grid-template-columns: 100%;
+        }
+
         @media (prefers-color-scheme: dark) {
           #timeline {
             background-color: ${colors.dark.base_bg_secondary_color};
             border-bottom: 1px solid ${colors.dark.base_border_color};
+          }
+        }
+
+        @media (min-width: ${sizes.container}) {
+          .wrapper {
+            grid-template-columns: 50% 50%;
           }
         }
       `}</style>

@@ -6,7 +6,13 @@ import Container from '@/components/layout/Container';
 const Active: NextPage = () => {
   return (
     <section id="active">
-      <Container>[ACTIVE PROJECTS]</Container>
+      <Container>
+        <div className="content">
+          [CURRENT SITUATION]
+          <br />
+          [WHAT IM LOOKING FOR...]
+        </div>
+      </Container>
       <style jsx>{`
         #active {
           position: relative;
@@ -14,9 +20,18 @@ const Active: NextPage = () => {
           background-color: ${colors.light.base_bg_secondary_color};
         }
 
+        .content {
+          padding: 20px 0;
+          border-bottom: 1px solid ${colors.light.base_border_color};
+        }
+
         @media (prefers-color-scheme: dark) {
           #active {
             background-color: ${colors.dark.base_bg_secondary_color};
+          }
+
+          .content {
+            border-bottom: 1px solid ${colors.dark.base_border_color};
           }
         }
       `}</style>
