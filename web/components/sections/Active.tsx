@@ -8,9 +8,14 @@ const Active: NextPage = () => {
     <section id="active">
       <Container>
         <div className="content">
+          <h2>Active Projects</h2>
           [CURRENT SITUATION]
           <br />
           [WHAT IM LOOKING FOR...]
+          <br />
+          [GITHUB REPOS]
+          <br />
+          [STRAVA GOALS]
         </div>
       </Container>
       <style jsx>{`

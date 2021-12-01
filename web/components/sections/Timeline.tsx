@@ -132,18 +132,21 @@ const Timeline: NextPage = () => {
     <section id="timeline">
       <Container>
         <div className="content">
+          <h2>Past Experience</h2>
           {timelineItems.map((item, i) => {
             if (i % 2 === 0) {
               return (
                 <div key={i} className="wrapper">
                   <TimelineItem item={item} />
-                  <div />
+                  <div className="timeline-center" />
+                  <div className="timeline-dummy" />
                 </div>
               );
             } else {
               return (
                 <div key={i} className="wrapper">
-                  <div />
+                  <div className="timeline-dummy" />
+                  <div className="timeline-center" />
                   <TimelineItem item={item} />
                 </div>
               );
@@ -168,6 +171,28 @@ const Timeline: NextPage = () => {
           grid-template-columns: 100%;
         }
 
+        .timeline-center {
+          display: none;
+          position: relative;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .timeline-center:after {
+          content: '';
+          position: absolute;
+          width: 6px;
+          background-color: ${colors.light.base_text_secondary_color};
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          margin-left: -3px;
+        }
+
+        .timeline-dummy {
+          display: none;
+        }
+
         @media (prefers-color-scheme: dark) {
           #timeline {
             background-color: ${colors.dark.base_bg_secondary_color};
@@ -177,7 +202,15 @@ const Timeline: NextPage = () => {
 
         @media (min-width: ${sizes.container}) {
           .wrapper {
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 40% 20% 40%;
+          }
+
+          .timeline-center {
+            display: block;
+          }
+
+          .timeline-dummy {
+            display: block;
           }
         }
       `}</style>
