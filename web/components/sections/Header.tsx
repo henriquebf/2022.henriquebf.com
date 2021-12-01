@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import zIndexes from '@/config/zIndexes.json';
 import colors from '@/config/colors.json';
+import sizes from '@/config/sizes.json';
+import zIndexes from '@/config/zIndexes.json';
 import { classnames } from '@/helpers/classnameHelper';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/layout/Container';
@@ -28,6 +29,7 @@ const Header: NextPage = () => {
       </Container>
       <style jsx>{`
         #header {
+          display: none;
           position: absolute;
           width: 100%;
           height: 65px;
@@ -42,7 +44,6 @@ const Header: NextPage = () => {
         @media (prefers-color-scheme: dark) {
           #header {
             color: ${colors.dark.base_text_primary_color};
-
             background-image: linear-gradient(
               to bottom,
               ${colors.dark.base_bg_primary_gradient}
@@ -57,8 +58,13 @@ const Header: NextPage = () => {
           transition: opacity 0.25s;
         }
 
-        @media (min-width: 1200px) {
+        .contact {
+          float: right;
+        }
+
+        @media (min-width: ${sizes.container}) {
           #header {
+            display: block;
             position: fixed;
           }
 

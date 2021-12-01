@@ -1,21 +1,13 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import colors from '@/config/colors.json';
+import sizes from '@/config/sizes.json';
 import zIndexes from '@/config/zIndexes.json';
 import { classnames } from '@/helpers/classnameHelper';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/layout/Container';
+import SocialIcons from '@/components/shared/SocialIcons';
 import Logo from '@/components/svg/Logo';
-import SocialGithub from '@/components/svg/SocialGithub';
-import SocialInstagram from '@/components/svg/SocialInstagram';
-import SocialLinkedin from '@/components/svg/SocialLinkedin';
-import SocialStrava from '@/components/svg/SocialStrava';
-import SocialEmail from '@/components/svg/SocialEmail';
-
-const content = {
-  title: '',
-  description: '',
-};
 
 const Intro: NextPage = () => {
   const scrollPosition = useScrollPosition();
@@ -35,37 +27,27 @@ const Intro: NextPage = () => {
   return (
     <section id="introduction">
       <div className={classnames(['content', showIntro ? 'show' : 'hide'])}>
-        <div className={classnames(['scale', showIntro ? 'show' : 'hide'])}>
-          <Container>
-            <Logo className="logo" color="#aaa" />
-            <h1>
-              Hi, I'm <b>Henrique Ferreira</b>
-            </h1>
-            <h3>
-              A <b>Road Cycling</b> addicted and <b>Fullstack Developer</b> with
-              large expertise using React based frameworks, building e-commerces
-              and applications for Web, Desktop and Mobile from scratch to large
-              scale production environments.
-            </h3>
-            <div>
-              <div className="social">
-                <SocialGithub size={40} color="#aaa" />
-              </div>
-              <div className="social">
-                <SocialLinkedin size={40} color="#aaa" />
-              </div>
-              <div className="social">
-                <SocialInstagram size={40} color="#aaa" />
-              </div>
-              <div className="social">
-                <SocialStrava size={40} color="#aaa" />
-              </div>
-              <div className="social">
-                <SocialEmail size={40} color="#aaa" />
+        <Container>
+          <div className="wrapper">
+            <div className={classnames(['scale', showIntro ? 'show' : 'hide'])}>
+              <Logo className="logo" color="#aaa" />
+              <h1>
+                I am <b>Henrique Ferreira</b>
+              </h1>
+              <h3>
+                A <b>Road Cycling</b> enthusiast and <b>Fullstack Developer</b>{' '}
+                specialist on React based frameworks.
+              </h3>
+              <h3>
+                Over 20 years experience building e-commerces and applications
+                for Web, Desktop and Mobile.
+              </h3>
+              <div className="social-icons">
+                <SocialIcons />
               </div>
             </div>
-          </Container>
-        </div>
+          </div>
+        </Container>
       </div>
       <div
         className={classnames(['caret', showIntro ? 'show' : 'hide'])}
@@ -96,7 +78,7 @@ const Intro: NextPage = () => {
 
         a,
         b {
-          color: ${colors.light.base_text_active_color};
+          color: ${colors.light.base_text_primary_color};
         }
 
         @media (prefers-color-scheme: dark) {
@@ -107,7 +89,7 @@ const Intro: NextPage = () => {
 
           a,
           b {
-            color: ${colors.dark.base_text_active_color};
+            color: ${colors.dark.base_text_primary_color};
           }
         }
 
@@ -115,10 +97,15 @@ const Intro: NextPage = () => {
           position: absolute;
           top: 50%;
           width: 100%;
-          height: 327px;
+          height: 375px;
           transform: translateY(-50%);
           opacity: 1;
           transition: opacity 0.25s;
+        }
+
+        .wrapper {
+          display: grid;
+          grid-template-columns: 100%;
         }
 
         .scale {
@@ -126,15 +113,17 @@ const Intro: NextPage = () => {
           transition: transform 0.25s;
         }
 
-        .social {
-          float: left;
-          margin: 0 10px 0 0;
-          cursor: pointer;
+        .social-icons {
+          padding-top: 10px;
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: ${sizes.container}) {
           .content {
             position: fixed;
+          }
+
+          .wrapper {
+            grid-template-columns: 50% 50%;
           }
 
           .content.hide {
@@ -147,6 +136,7 @@ const Intro: NextPage = () => {
         }
 
         .caret {
+          display: none;
           position: absolute;
           bottom: 20px;
           left: 50%;
@@ -168,6 +158,12 @@ const Intro: NextPage = () => {
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
             border-top: 10px solid ${colors.dark.base_text_secondary_color};
+          }
+        }
+
+        @media (min-width: ${sizes.container}) {
+          .caret {
+            display: block;
           }
         }
 
