@@ -9,21 +9,22 @@ const timelineItems = [
   {
     time: `2020 - 2021`,
     duration: `2 years`,
-    title: `Tempo GmbH (Berlin)`,
+    title: `Tempo GmbH`,
+    location: `Berlin, Germany`,
     position: `Co-founder & CTO`,
     description: `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the  application from MVP to production state and leading a small team of other 3 senior developers.`,
-    links: [
-      {
-        text: `Download Tempo`,
-        url: `https://yourtempo.co`,
-      },
-    ],
     bullets: ['TYPESCRIPT', 'REACT', 'ELECTRON', 'REACT NATIVE'],
+    thumb: 'tempo',
+    link: {
+      text: `Download Tempo`,
+      url: `https://yourtempo.co`,
+    },
   },
   {
     time: `2015 - 2019`,
     duration: `5 years`,
     title: `Pillar GmbH (Berlin)`,
+    location: `Berlin, Germany`,
     position: `Co-founder & Fullstack Developer`,
     description: `Co-running a business to implement MVPs, websites and small e-commerces for external clients. Our highest focus was providing the best user experience.`,
     highlights: [
@@ -37,18 +38,18 @@ const timelineItems = [
       `XU Berlin (web survey)`,
       `Fluxdrive (bespoke CMS)`,
     ],
-    links: [
-      {
-        text: `See work`,
-        url: `https://pillarstudio.com`,
-      },
-    ],
-    bullets: ['ES6', 'REACT', 'NODEJS', 'MONGODB', 'DOCKER'],
+    bullets: ['ES6', 'REACT', 'NODE', 'MONGODB', 'DOCKER'],
+    thumb: 'pillar',
+    link: {
+      text: `See work`,
+      url: `https://pillarstudio.com`,
+    },
   },
   {
     time: `2014`,
     duration: `5 months`,
-    title: `Freelancer (Berlin)`,
+    title: `Freelancer`,
+    location: `Berlin, Germany`,
     position: `Fullstack Developer`,
     description: `After my previous employer's business shut down, I’ve done some solo work as a freelancer for clients in Brazil and Germany.`,
     highlights: [
@@ -56,12 +57,14 @@ const timelineItems = [
       `Sabin (website frontend)`,
       `Latin Travel (website)`,
     ],
-    bullets: [`ANGULAR`, `RUBY ON RAILS`, `SOCKET.IO`],
+    bullets: [`ANGULAR`, `RAILS`, `SOCKET.IO`],
+    thumb: 'sabin',
   },
   {
     time: `2013 - 2014`,
     duration: `8 months`,
-    title: `Bacon de Czar GmbH (Berlin)`,
+    title: `Bacon de Czar GmbH`,
+    location: `Berlin, Germany`,
     position: `Backend Developer`,
     description: `Worked as backend developer and actively assisting the frontend functionalities for a small creative studio based in Berlin, building apps, campaigns and websites.`,
     highlights: [
@@ -71,12 +74,14 @@ const timelineItems = [
       `Danica Pension (web application)`,
       `Chop Hub (MVP/web application)`,
     ],
-    bullets: [`ANGULAR`, `NODEJS`, `COFFEESCRIPT`, `RUBY ON RAILS`, `PHP`],
+    bullets: [`ANGULAR`, `NODE`, `COFFEESCRIPT`, `RAILS`, `PHP`],
+    thumb: 'bdc',
   },
   {
     time: `2011 - 2013`,
     duration: `2 years`,
-    title: `Made Tech Limited (London)`,
+    title: `Made Tech Limited`,
+    location: `London, United Kingdom`,
     position: `Fullstack Developer`,
     description: `Being the first hire of the company, I have pushed my skills to new standards, taking a lot of ownership and doing front- and backend for important projects.`,
     highlights: [
@@ -85,12 +90,14 @@ const timelineItems = [
       `Vertu (website frontend)`,
       `VGL (website frontend)`,
     ],
-    bullets: [`RUBY ON RAILS`, `SPREE`, `ANGULAR`, `JQUERY`, `PHP`],
+    bullets: [`RAILS`, `SPREE`, `ANGULAR`, `JQUERY`, `PHP`],
+    thumb: 'made',
   },
   {
     time: `2011`,
     duration: `5 months`,
-    title: `Freelancer (London)`,
+    title: `Freelancer`,
+    location: `London, United Kingdom`,
     position: `Fullstack Developer`,
     description: `I have collaborated with a friend’s project by implementing his MVP, with the main benefit of buidling a showcase to potential new hires.`,
     highlights: [`Mineral trade (MVP/web app)`],
@@ -99,7 +106,8 @@ const timelineItems = [
   {
     time: `2002 - 2010`,
     duration: `9 years`,
-    title: `Tasco Ltda. (Brazil)`,
+    title: `Tasco Ltda.`,
+    location: `Belo Horizonte, Brazil`,
     position: `Software Developer`,
     description: `Working on a small and young team, I made a big contribution for most company’s products, by building very professional web based user interfaces.`,
     highlights: [
@@ -108,19 +116,23 @@ const timelineItems = [
       `Entertainment-to-Go (kiosk)`,
     ],
     bullets: [`JAVASCRIPT`, `PHP`, `MYSQL`, `SQLITE`, `C++`],
+    thumb: 'tasco',
   },
   {
     time: `2001 - 2002`,
     duration: `1 year`,
-    title: `Versão Brasileira Ltda. (Brazil)`,
+    title: `Versão Brasileira Ltda.`,
+    location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: `Hired as an intern, I was able to play my first role as a developer of a catalogue CD-ROM for my city, having a great support from the database provider.`,
     bullets: [`JAVASCRIPT`, `LIGHTBASE`],
+    thumb: 'vb',
   },
   {
     time: `1999 - 2001`,
     duration: `1 year`,
-    title: `Multiline Ltda. (Brazil)`,
+    title: `Multiline Ltda.`,
+    location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: `In my first internship, I assisted other developers in some tasks, mainly related to Linux and network.`,
     bullets: [`LINUX`],
@@ -182,7 +194,7 @@ const Timeline: NextPage = () => {
           content: '';
           position: absolute;
           width: 6px;
-          background-color: ${colors.light.base_text_secondary_color};
+          background-color: ${colors.light.base_border_color};
           top: 0;
           bottom: 0;
           left: 50%;
@@ -198,11 +210,15 @@ const Timeline: NextPage = () => {
             background-color: ${colors.dark.base_bg_secondary_color};
             border-bottom: 1px solid ${colors.dark.base_border_color};
           }
+
+          .timeline-center:after {
+            background-color: ${colors.dark.base_border_color};
+          }
         }
 
         @media (min-width: ${sizes.container}) {
           .wrapper {
-            grid-template-columns: 40% 20% 40%;
+            grid-template-columns: 45% 10% 45%;
           }
 
           .timeline-center {
