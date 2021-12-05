@@ -9,8 +9,6 @@ const Active: NextPage = () => {
       <Container>
         <div className="content">
           <h2>Active Projects</h2>
-          [CURRENT SITUATION]
-          <br />
           [WHAT IM LOOKING FOR...]
           <br />
           [GITHUB REPOS]

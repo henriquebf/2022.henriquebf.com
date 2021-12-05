@@ -7,7 +7,6 @@ import { classNames } from '@/helpers/classnameHelper';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/layout/Container';
 import SocialIcons from '@/components/shared/SocialIcons';
-import Logo from '@/components/svg/Logo';
 
 const Intro: NextPage = () => {
   const scrollPosition = useScrollPosition();
@@ -30,7 +29,7 @@ const Intro: NextPage = () => {
         <Container>
           <div className="wrapper">
             <div className={classNames(['scale', showIntro ? 'show' : 'hide'])}>
-              <Logo className="logo" color="#aaa" />
+              <div className="avatar"></div>
               <h1>
                 I am <b>Henrique Ferreira</b>
               </h1>
@@ -113,6 +112,21 @@ const Intro: NextPage = () => {
         .scale {
           transform: scale(1);
           transition: transform 0.25s;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+          border: 2px solid ${colors.light.border_highlight_color};
+          background-color: ${colors.light.border_discreet_color};
+        }
+
+        @media (prefers-color-scheme: dark) {
+          .avatar {
+            border: 2px solid ${colors.dark.border_highlight_color};
+            background-color: ${colors.dark.border_discreet_color};
+          }
         }
 
         .social-icons {
