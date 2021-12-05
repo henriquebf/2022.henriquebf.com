@@ -1,20 +1,22 @@
 {
   "light": {
-    "base_bg_primary_color": "#ebebeb",
-    "base_bg_primary_gradient": "#ebebeb, rgba(235, 235, 235, 0.9) 50%, rgba(235, 235, 235, 0)",
-    "base_bg_secondary_color": "#f2f2f2",
-    "base_text_primary_color": "#222",
-    "base_text_secondary_color": "#666",
-    "base_text_active_color": "#000",
-    "base_border_color": "#ddd"
+    "bg_primary_color": "#ebebeb",
+    "bg_primary_gradient": "#ebebeb, rgba(235, 235, 235, 0.9) 50%, rgba(235, 235, 235, 0)",
+    "bg_secondary_color": "#f2f2f2",
+    "text_primary_color": "#222",
+    "text_secondary_color": "#666",
+    "text_active_color": "#000",
+    "border_discreet_color": "#ddd",
+    "border_highlight_color": "#f00"
   },
   "dark": {
-    "base_bg_primary_color": "#222",
-    "base_bg_primary_gradient": "#222, rgba(34, 34, 34, 0.9) 50%, rgba(34, 34, 34, 0)",
-    "base_bg_secondary_color": "#2a2a2a",
-    "base_text_primary_color": "#fff",
-    "base_text_secondary_color": "#aaa",
-    "base_text_active_color": "#fff",
-    "base_border_color": "#444"
+    "bg_primary_color": "#222",
+    "bg_primary_gradient": "#222, rgba(34, 34, 34, 0.9) 50%, rgba(34, 34, 34, 0)",
+    "bg_secondary_color": "#2a2a2a",
+    "text_primary_color": "#fff",
+    "text_secondary_color": "#aaa",
+    "text_active_color": "#fff",
+    "border_discreet_color": "#444",
+    "border_highlight_color": "#f00"
   }
 }

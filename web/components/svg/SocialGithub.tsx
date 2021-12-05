@@ -23,20 +23,20 @@ const Svg: NextPage<Props> = ({ size }) => {
       </svg>
       <style jsx>{`
         circle {
-          fill: ${colors.light.base_text_secondary_color};
+          fill: ${colors.light.text_secondary_color};
         }
 
         circle:hover {
-          fill: ${colors.light.base_text_active_color};
+          fill: ${colors.light.text_active_color};
         }
 
         @media (prefers-color-scheme: dark) {
           circle {
-            fill: ${colors.dark.base_text_secondary_color};
+            fill: ${colors.dark.text_secondary_color};
           }
 
           circle:hover {
-            fill: ${colors.dark.base_text_active_color};
+            fill: ${colors.dark.text_active_color};
           }
         }
       `}</style>

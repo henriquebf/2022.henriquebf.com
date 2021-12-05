@@ -22,21 +22,21 @@ const Active: NextPage = () => {
         #active {
           position: relative;
           z-index: ${zIndexes.section};
-          background-color: ${colors.light.base_bg_secondary_color};
+          background-color: ${colors.light.bg_secondary_color};
         }
 
         .content {
           padding: 20px 0;
-          border-bottom: 1px solid ${colors.light.base_border_color};
+          border-bottom: 1px solid ${colors.light.border_discreet_color};
         }
 
         @media (prefers-color-scheme: dark) {
           #active {
-            background-color: ${colors.dark.base_bg_secondary_color};
+            background-color: ${colors.dark.bg_secondary_color};
           }
 
           .content {
-            border-bottom: 1px solid ${colors.dark.base_border_color};
+            border-bottom: 1px solid ${colors.dark.border_discreet_color};
           }
         }
       `}</style>

@@ -16,14 +16,14 @@ const timelineItems = [
     bullets: ['TYPESCRIPT', 'REACT', 'ELECTRON', 'REACT NATIVE'],
     thumb: 'tempo',
     link: {
-      text: `Download Tempo`,
+      text: `Visit Tempo website`,
       url: `https://yourtempo.co`,
     },
   },
   {
     time: `2015 - 2019`,
     duration: `5 years`,
-    title: `Pillar GmbH (Berlin)`,
+    title: `Pillar GmbH`,
     location: `Berlin, Germany`,
     position: `Co-founder & Fullstack Developer`,
     description: `Co-running a business to implement MVPs, websites and small e-commerces for external clients. Our highest focus was providing the best user experience.`,
@@ -41,7 +41,7 @@ const timelineItems = [
     bullets: ['ES6', 'REACT', 'NODE', 'MONGODB', 'DOCKER'],
     thumb: 'pillar',
     link: {
-      text: `See work`,
+      text: `Visit Pillar website`,
       url: `https://pillarstudio.com`,
     },
   },
@@ -58,7 +58,6 @@ const timelineItems = [
       `Latin Travel (website)`,
     ],
     bullets: [`ANGULAR`, `RAILS`, `SOCKET.IO`],
-    thumb: 'sabin',
   },
   {
     time: `2013 - 2014`,
@@ -116,7 +115,6 @@ const timelineItems = [
       `Entertainment-to-Go (kiosk)`,
     ],
     bullets: [`JAVASCRIPT`, `PHP`, `MYSQL`, `SQLITE`, `C++`],
-    thumb: 'tasco',
   },
   {
     time: `2001 - 2002`,
@@ -126,7 +124,6 @@ const timelineItems = [
     position: `Intern`,
     description: `Hired as an intern, I was able to play my first role as a developer of a catalogue CD-ROM for my city, having a great support from the database provider.`,
     bullets: [`JAVASCRIPT`, `LIGHTBASE`],
-    thumb: 'vb',
   },
   {
     time: `1999 - 2001`,
@@ -144,13 +141,18 @@ const Timeline: NextPage = () => {
     <section id="timeline">
       <Container>
         <div className="content">
-          <h2>Past Experience</h2>
+          <h2>Professional Timeline</h2>
+          <div className="wrapper">
+            <div className="timeline-dummy" />
+            <div className="timeline-center first" />
+            <div className="timeline-dummy" />
+          </div>
           {timelineItems.map((item, i) => {
             if (i % 2 === 0) {
               return (
                 <div key={i} className="wrapper">
-                  <TimelineItem item={item} />
-                  <div className="timeline-center" />
+                  <TimelineItem item={item} direction="left" />
+                  <div className="timeline-center middle" />
                   <div className="timeline-dummy" />
                 </div>
               );
@@ -158,20 +160,30 @@ const Timeline: NextPage = () => {
               return (
                 <div key={i} className="wrapper">
                   <div className="timeline-dummy" />
-                  <div className="timeline-center" />
-                  <TimelineItem item={item} />
+                  <div className="timeline-center middle" />
+                  <TimelineItem item={item} direction="right" />
                 </div>
               );
             }
           })}
+          <div className="wrapper">
+            <div className="timeline-dummy" />
+            <div className="timeline-center last" />
+            <div className="timeline-dummy" />
+          </div>
         </div>
       </Container>
       <style jsx>{`
         #timeline {
           position: relative;
           z-index: ${zIndexes.section};
-          background-color: ${colors.light.base_bg_secondary_color};
-          border-bottom: 1px solid ${colors.light.base_border_color};
+          background-color: ${colors.light.bg_secondary_color};
+          border-bottom: 1px solid ${colors.light.border_discreet_color};
+        }
+
+        h2 {
+          padding-bottom: 0;
+          margin-bottom: 0;
         }
 
         .content {
@@ -185,48 +197,90 @@ const Timeline: NextPage = () => {
 
         .timeline-center {
           display: none;
-          position: relative;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .timeline-center:after {
-          content: '';
-          position: absolute;
-          width: 6px;
-          background-color: ${colors.light.base_border_color};
-          top: 0;
-          bottom: 0;
-          left: 50%;
-          margin-left: -3px;
         }
 
         .timeline-dummy {
           display: none;
         }
 
-        @media (prefers-color-scheme: dark) {
-          #timeline {
-            background-color: ${colors.dark.base_bg_secondary_color};
-            border-bottom: 1px solid ${colors.dark.base_border_color};
-          }
-
-          .timeline-center:after {
-            background-color: ${colors.dark.base_border_color};
-          }
-        }
-
         @media (min-width: ${sizes.container}) {
           .wrapper {
-            grid-template-columns: 45% 10% 45%;
+            grid-template-columns: 50% 1px 50%;
           }
 
           .timeline-center {
             display: block;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          .timeline-center:after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+          }
+
+          .timeline-center.middle:after {
+            background-color: ${colors.light.border_highlight_color};
+          }
+
+          .timeline-center.first,
+          .timeline-center.last {
+            height: 40px;
+          }
+
+          .timeline-center.first:after {
+            background-image: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 0),
+              ${colors.light.border_highlight_color}
+            );
+          }
+
+          .timeline-center.last:after {
+            background-image: linear-gradient(
+              to bottom,
+              ${colors.light.border_highlight_color},
+              rgba(0, 0, 0, 0)
+            );
           }
 
           .timeline-dummy {
             display: block;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          #timeline {
+            background-color: ${colors.dark.bg_secondary_color};
+            border-bottom: 1px solid ${colors.dark.border_discreet_color};
+          }
+
+          .timeline-center.middle:after {
+            background-color: ${colors.dark.border_highlight_color};
+          }
+
+          .timeline-center.first:after {
+            background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0),
+                ${colors.dark.border_highlight_color}
+              )
+              1 100%;
+          }
+
+          .timeline-center.last:after {
+            background-image: linear-gradient(
+                to bottom,
+                ${colors.dark.border_highlight_color},
+                rgba(0, 0, 0, 0)
+              )
+              1 100%;
           }
         }
       `}</style>

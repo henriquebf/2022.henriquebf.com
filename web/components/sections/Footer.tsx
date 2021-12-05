@@ -24,7 +24,7 @@ const Footer: NextPage = () => {
           z-index: ${zIndexes.section};
           padding: 20px 0;
           line-height: 30px;
-          color: ${colors.light.base_text_secondary_color};
+          color: ${colors.light.text_secondary_color};
         }
 
         .wrapper {
@@ -43,7 +43,7 @@ const Footer: NextPage = () => {
 
         @media (prefers-color-scheme: dark) {
           #footer {
-            color: ${colors.dark.base_text_secondary_color};
+            color: ${colors.dark.text_secondary_color};
           }
         }
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import zIndexes from '@/config/zIndexes.json';
-import { classnames } from '@/helpers/classnameHelper';
+import { classNames } from '@/helpers/classnameHelper';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/layout/Container';
 
@@ -23,8 +23,8 @@ const Header: NextPage = () => {
   return (
     <section id="header">
       <Container>
-        <div className={classnames(['content', showHeader ? 'show' : 'hide'])}>
-          ABOUT | ACTIVE PROJECTS | PAST EXPERIENCE
+        <div className={classNames(['content', showHeader ? 'show' : 'hide'])}>
+          ABOUT | ACTIVE PROJECTS | PROFESSIONAL TIMELINE
         </div>
       </Container>
       <style jsx>{`
@@ -34,19 +34,19 @@ const Header: NextPage = () => {
           width: 100%;
           height: 65px;
           z-index: ${zIndexes.header};
-          color: ${colors.light.base_text_primary_color};
+          color: ${colors.light.text_primary_color};
           background-image: linear-gradient(
             to bottom,
-            ${colors.light.base_bg_primary_gradient}
+            ${colors.light.bg_primary_gradient}
           );
         }
 
         @media (prefers-color-scheme: dark) {
           #header {
-            color: ${colors.dark.base_text_primary_color};
+            color: ${colors.dark.text_primary_color};
             background-image: linear-gradient(
               to bottom,
-              ${colors.dark.base_bg_primary_gradient}
+              ${colors.dark.bg_primary_gradient}
             );
           }
         }

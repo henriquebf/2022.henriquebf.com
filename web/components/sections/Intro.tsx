@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import zIndexes from '@/config/zIndexes.json';
-import { classnames } from '@/helpers/classnameHelper';
+import { classNames } from '@/helpers/classnameHelper';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/layout/Container';
 import SocialIcons from '@/components/shared/SocialIcons';
@@ -26,10 +26,10 @@ const Intro: NextPage = () => {
 
   return (
     <section id="introduction">
-      <div className={classnames(['content', showIntro ? 'show' : 'hide'])}>
+      <div className={classNames(['content', showIntro ? 'show' : 'hide'])}>
         <Container>
           <div className="wrapper">
-            <div className={classnames(['scale', showIntro ? 'show' : 'hide'])}>
+            <div className={classNames(['scale', showIntro ? 'show' : 'hide'])}>
               <Logo className="logo" color="#aaa" />
               <h1>
                 I am <b>Henrique Ferreira</b>
@@ -50,7 +50,7 @@ const Intro: NextPage = () => {
         </Container>
       </div>
       <div
-        className={classnames(['caret', showIntro ? 'show' : 'hide'])}
+        className={classNames(['caret', showIntro ? 'show' : 'hide'])}
         onClick={_handleCaretClick}
       />
       <style jsx>{`
@@ -58,38 +58,40 @@ const Intro: NextPage = () => {
           position: relative;
           z-index: ${zIndexes.section};
           height: 100vh;
-          color: ${colors.light.base_text_primary_color};
-          background-color: ${colors.light.base_bg_primary_color};
-          border-bottom: 1px solid ${colors.light.base_border_color};
+          color: ${colors.light.text_primary_color};
+          background-color: ${colors.light.bg_primary_color};
+          border-bottom: 1px solid ${colors.light.border_discreet_color};
         }
 
         @media (prefers-color-scheme: dark) {
           #introduction {
-            color: ${colors.dark.base_text_primary_color};
-            background-color: ${colors.dark.base_bg_primary_color};
-            border-bottom: 1px solid ${colors.dark.base_border_color};
+            color: ${colors.dark.text_primary_color};
+            background-color: ${colors.dark.bg_primary_color};
+            border-bottom: 1px solid ${colors.dark.border_discreet_color};
           }
         }
 
         h1,
         h3 {
-          color: ${colors.light.base_text_secondary_color};
+          font-weight: 400;
+          color: ${colors.light.text_secondary_color};
         }
 
         a,
         b {
-          color: ${colors.light.base_text_primary_color};
+          font-weight: 500;
+          color: ${colors.light.text_primary_color};
         }
 
         @media (prefers-color-scheme: dark) {
           h1,
           h3 {
-            color: ${colors.dark.base_text_secondary_color};
+            color: ${colors.dark.text_secondary_color};
           }
 
           a,
           b {
-            color: ${colors.dark.base_text_primary_color};
+            color: ${colors.dark.text_primary_color};
           }
         }
 
@@ -143,10 +145,10 @@ const Intro: NextPage = () => {
           transform: translateX(-50%);
           width: 20px;
           height: 10px;
-          border-top-color: ${colors.light.base_text_secondary_color};
+          border-top-color: ${colors.light.text_secondary_color};
           border-left: 10px solid transparent;
           border-right: 10px solid transparent;
-          border-top: 10px solid ${colors.light.base_text_secondary_color};
+          border-top: 10px solid ${colors.light.text_secondary_color};
           cursor: pointer;
           opacity: 1;
           transition: opacity 0.25s;
@@ -154,10 +156,10 @@ const Intro: NextPage = () => {
 
         @media (prefers-color-scheme: dark) {
           .caret {
-            border-top-color: ${colors.dark.base_text_secondary_color};
+            border-top-color: ${colors.dark.text_secondary_color};
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
-            border-top: 10px solid ${colors.dark.base_text_secondary_color};
+            border-top: 10px solid ${colors.dark.text_secondary_color};
           }
         }
 
