@@ -5,6 +5,19 @@ import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import TimelineItem from '@/components/shared/TimelineItem';
 
+const currentStatus = [
+  `After the sunset of Tempo late in 2021, I have decided to
+  concentrate my efforts on my parental leave. The last few years
+  co-running a startup have consumed a lot of my energy and I saw a
+  opportunity of taking this moment a little recovery before joining a
+  next venture.`,
+  `However, during the periods I am not busy changing dipers, I am
+  making some effort to work on some small side projects in order to
+  recycle my skills outside the stack I have been working on the last
+  few years.`,
+  `You can see below a timeline of the most relevant achievemens in my commercial experience:`,
+];
+
 const timelineItems = [
   {
     time: `2020 - 2021`,
@@ -142,6 +155,9 @@ const Timeline: NextPage = () => {
       <Container>
         <div className="content">
           <h2>Professional Timeline</h2>
+          {currentStatus.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
           <div className="wrapper">
             <div className="timeline-dummy" />
             <div className="timeline-center first" />
@@ -181,11 +197,6 @@ const Timeline: NextPage = () => {
           border-bottom: 1px solid ${colors.light.border_discreet_color};
         }
 
-        h2 {
-          padding-bottom: 0;
-          margin-bottom: 0;
-        }
-
         .content {
           padding: 20px 0;
         }
@@ -193,6 +204,10 @@ const Timeline: NextPage = () => {
         .wrapper {
           display: grid;
           grid-template-columns: 100%;
+        }
+
+        p {
+          color: ${colors.light.text_secondary_color};
         }
 
         .timeline-center {
@@ -206,6 +221,11 @@ const Timeline: NextPage = () => {
         @media (min-width: ${sizes.container}) {
           .wrapper {
             grid-template-columns: 50% 1px 50%;
+          }
+
+          p {
+            font-size: 1.17em;
+            color: ${colors.dark.text_secondary_color};
           }
 
           .timeline-center {
