@@ -8,7 +8,7 @@ type Link = {
   url: string;
 };
 
-type TimelineItem = {
+type Item = {
   time: string;
   duration: string;
   title: string;
@@ -23,7 +23,7 @@ type TimelineItem = {
 
 type Props = {
   direction: 'left' | 'right';
-  item: TimelineItem;
+  item: Item;
 };
 
 const TimelineItem: NextPage<Props> = ({ direction, item }) => {

@@ -5,19 +5,6 @@ import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import TimelineItem from '@/components/shared/TimelineItem';
 
-const currentStatus = [
-  `After the sunset of Tempo late in 2021, I have decided to
-  concentrate my efforts on my parental leave. The last few years
-  co-running a startup have consumed a lot of my energy and I saw a
-  opportunity of taking this moment a little recovery before joining a
-  next venture.`,
-  `However, during the periods I am not busy changing dipers, I am
-  making some effort to work on some small side projects in order to
-  recycle my skills outside the stack I have been working on the last
-  few years.`,
-  `You can see below a timeline of the most relevant achievemens in my commercial experience:`,
-];
-
 const timelineItems = [
   {
     time: `2020 - 2021`,
@@ -70,7 +57,7 @@ const timelineItems = [
       `Sabin (website frontend)`,
       `Latin Travel (website)`,
     ],
-    bullets: [`ANGULAR`, `RAILS`, `SOCKET.IO`],
+    bullets: [`ANGULAR`, `RAILS`, `NODE`, `SOCKET.IO`],
   },
   {
     time: `2013 - 2014`,
@@ -102,7 +89,7 @@ const timelineItems = [
       `Vertu (website frontend)`,
       `VGL (website frontend)`,
     ],
-    bullets: [`RAILS`, `SPREE`, `ANGULAR`, `JQUERY`, `PHP`],
+    bullets: [`RAILS`, `SPREE`, `ANGULAR`, `JQUERY`, `PHP`, `HTML5`],
     thumb: 'made',
   },
   {
@@ -154,10 +141,23 @@ const Timeline: NextPage = () => {
     <section id="timeline">
       <Container>
         <div className="content">
-          <h2>Professional Timeline</h2>
-          {currentStatus.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
+          <h2>Career Timeline</h2>
+          <p>
+            Having originally graduated as a{' '}
+            <b>Control and Automation Engineer</b> in late 2003, I have always
+            followed the path of Software Development since the early stages of
+            my career. It has started in Brazil and grew internationally in the
+            United Kingdom and Germany.
+          </p>
+          <p>
+            At this current moment, I have planned a{' '}
+            <b>parental leave until second quarter of 2022</b>. In case of any
+            interest to discuss future collaboration, please feel free to reach
+            me on{' '}
+            <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>{' '}
+            or any other channel provided in this website.
+          </p>
+          <div className="timeline-top"></div>
           <div className="wrapper">
             <div className="timeline-dummy" />
             <div className="timeline-center first" />
@@ -201,6 +201,10 @@ const Timeline: NextPage = () => {
           padding: 20px 0;
         }
 
+        .timeline-top {
+          display: none;
+        }
+
         .wrapper {
           display: grid;
           grid-template-columns: 100%;
@@ -208,6 +212,19 @@ const Timeline: NextPage = () => {
 
         p {
           color: ${colors.light.text_secondary_color};
+        }
+
+        a,
+        b {
+          font-weight: 500;
+          color: ${colors.light.text_primary_color};
+        }
+
+        @media (prefers-color-scheme: dark) {
+          a,
+          b {
+            color: ${colors.dark.text_primary_color};
+          }
         }
 
         .timeline-center {
@@ -219,6 +236,19 @@ const Timeline: NextPage = () => {
         }
 
         @media (min-width: ${sizes.container}) {
+          .timeline-top {
+            display: block;
+            width: 100px;
+            height: 2px;
+            margin: 0 auto;
+            background-image: linear-gradient(
+              to right,
+              ${colors.light.border_highlight_color},
+              ${colors.light.border_highlight_color},
+              ${colors.light.border_highlight_color}
+            );
+          }
+
           .wrapper {
             grid-template-columns: 50% 1px 50%;
           }
@@ -251,15 +281,11 @@ const Timeline: NextPage = () => {
 
           .timeline-center.first,
           .timeline-center.last {
-            height: 40px;
+            height: 60px;
           }
 
           .timeline-center.first:after {
-            background-image: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 0),
-              ${colors.light.border_highlight_color}
-            );
+            background-color: ${colors.light.border_highlight_color};
           }
 
           .timeline-center.last:after {

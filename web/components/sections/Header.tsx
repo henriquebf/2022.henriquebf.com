@@ -24,7 +24,7 @@ const Header: NextPage = () => {
     <section id="header">
       <Container>
         <div className={classNames(['content', showHeader ? 'show' : 'hide'])}>
-          ABOUT | ACTIVE PROJECTS | PROFESSIONAL TIMELINE
+          ABOUT | ACTIVE PROJECTS | CAREER TIMELINE
         </div>
       </Container>
       <style jsx>{`

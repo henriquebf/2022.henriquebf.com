@@ -46,7 +46,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         h1,
         h2,
-        h3 {
+        h3,
+        h4,
+        h5 {
           font-weight: 500;
         }
 
