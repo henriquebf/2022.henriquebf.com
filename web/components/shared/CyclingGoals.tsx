@@ -12,6 +12,7 @@ const ProjectItem: NextPage = () => {
         represents a progress of <b>93%</b> and I am <b>253 km</b> behind the
         schedule.
       </p>
+      <div className="progress-bar"></div>
       <style jsx>{`
         p {
           color: ${colors.light.text_secondary_color};
@@ -19,6 +20,16 @@ const ProjectItem: NextPage = () => {
 
         b {
           color: ${colors.light.text_primary_color};
+        }
+
+        .progress-bar {
+          width: 100%;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 15px;
+          color: ${colors.light.border_highlight_color};
+          border: 2px solid ${colors.light.border_highlight_color};
+          background-color: ${colors.light.border_discreet_color};
         }
 
         @media (min-width: ${sizes.container}) {
@@ -31,6 +42,12 @@ const ProjectItem: NextPage = () => {
 
           b {
             color: ${colors.dark.text_primary_color};
+          }
+
+          .progress-bar {
+            color: ${colors.dark.border_highlight_color};
+            border: 2px solid ${colors.dark.border_highlight_color};
+            background-color: ${colors.dark.border_discreet_color};
           }
         }
       `}</style>
