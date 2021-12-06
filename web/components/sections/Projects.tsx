@@ -4,6 +4,7 @@ import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import ProjectItem from '@/components/shared/ProjectItem';
+import CyclingGoals from '@/components/shared/CyclingGoals';
 
 const projects = [
   {
@@ -37,7 +38,7 @@ const Projects: NextPage = () => {
               ))}
             </div>
             <div className="goals">
-              <h4>Cycling Yearly Goal</h4>
+              <CyclingGoals />
             </div>
           </div>
         </div>

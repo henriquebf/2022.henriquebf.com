@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
-import { classNames } from '@/helpers/classnameHelper';
+import IconExternalLink from '@/components/svg/IconExternalLink';
+import IconGithub from '@/components/svg/IconGithub';
 
 type Item = {
   title: string;
@@ -17,13 +18,24 @@ type Props = {
 const ProjectItem: NextPage<Props> = ({ item }) => {
   return (
     <div className="project-item">
-      <div>
-        <h4>{item.title}</h4>
-        <p>{item.description}</p>
+      <h4>{item.title}</h4>
+      <p>{item.description}</p>
+      <div className="icons">
+        <div>
+          <IconGithub size="20px" />
+        </div>
+        <div>
+          <IconExternalLink size="20px" />
+        </div>
       </div>
       <style jsx>{`
         p {
           color: ${colors.light.text_secondary_color};
+        }
+
+        .icons {
+          display: flex;
+          gap: 10px;
         }
 
         @media (min-width: ${sizes.container}) {
