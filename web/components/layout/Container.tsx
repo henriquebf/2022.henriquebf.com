@@ -12,8 +12,14 @@ const Container: NextPage<Props> = ({ children }) => {
       {children}
       <style jsx>{`
         .container {
-          width: ${sizes.container};
-          margin: 0 auto;
+          margin: 0 20px;
+        }
+
+        @media (min-width: ${sizes.container}) {
+          .container {
+            width: ${sizes.container};
+            margin: 0 auto;
+          }
         }
       `}</style>
     </div>
