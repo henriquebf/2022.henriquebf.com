@@ -29,11 +29,6 @@ const Footer: NextPage = () => {
           color: ${colors.light.text_secondary_color};
         }
 
-        .wrapper {
-          display: flex;
-          justify-content: space-between;
-        }
-
         .email {
           display: none;
         }
@@ -51,6 +46,8 @@ const Footer: NextPage = () => {
 
         @media (min-width: ${sizes.container}) {
           .wrapper {
+            display: flex;
+            justify-content: space-between;
             grid-template-columns: 50% 50%;
           }
 
