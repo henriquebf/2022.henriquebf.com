@@ -152,11 +152,8 @@ const Timeline: NextPage = () => {
         <div className="content">
           <h2>Career Timeline</h2>
           <p>
-            At this current moment, I have planned a parental leave until second
-            quarter of 2022.
-          </p>
-          <p>
-            In case of any interest to discuss the possibility of future
+            <b>Current status:</b> Parental leave from december 2021 until Aprl
+            2022. In case of any interest to discuss the possibility of future
             collaboration, please feel free to reach me on{' '}
             <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>{' '}
             or any other channel provided in this website.

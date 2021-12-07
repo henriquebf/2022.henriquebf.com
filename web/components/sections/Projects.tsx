@@ -9,7 +9,7 @@ import CyclingGoals from '@/components/shared/CyclingGoals';
 const projects = [
   {
     title: `Troffee Cycling Club`,
-    description: `Website including my personal reports about most of the best road cycling experiences around the world.`,
+    description: `A Platform to share cycling experiences. Alpine climbs, touring routes and information about products related to the sport.`,
     github: `https://github.com/henriquebf/troffee`,
     link: `https://trofee.cc`,
   },
