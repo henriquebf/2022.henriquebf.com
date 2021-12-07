@@ -9,15 +9,15 @@ import CyclingGoals from '@/components/shared/CyclingGoals';
 const projects = [
   {
     title: `Troffee Cycling Club`,
-    description: `Website with personal reports, in details, about some of the best road cycling experiences around the world.`,
-    // github: `https://github.com`,
+    description: `Website including my personal reports about most of the best road cycling experiences around the world.`,
+    github: `https://github.com/henriquebf/troffee`,
     link: `https://trofee.cc`,
   },
   {
     title: `PDF Scan Match`,
     description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
-    // github: `https://github.com`,
-    // link: `https://trofee.cc`,
+    github: `https://github.com/henriquebf/pdf-scan-match`,
+    link: `https://pdf-scan-match.henriquebf.com`,
   },
   {
     title: `Gear Alert`,

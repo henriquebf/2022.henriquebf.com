@@ -55,6 +55,8 @@ const About: NextPage = () => {
       <style jsx>{`
         #about {
           position: relative;
+          display: flex;
+          align-items: center;
           z-index: ${zIndexes.section};
           height: 100vh;
           color: ${colors.light.text_primary_color};
@@ -95,11 +97,7 @@ const About: NextPage = () => {
         }
 
         .content {
-          position: absolute;
-          top: 50%;
           width: 100%;
-          height: 375px;
-          transform: translateY(-50%);
           opacity: 1;
           transition: opacity 0.25s;
         }
