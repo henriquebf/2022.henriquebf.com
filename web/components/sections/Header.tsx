@@ -27,20 +27,21 @@ const Header: NextPage = () => {
     element?.scrollIntoView();
     setTimeout(() => setShowHeader(false), 50);
   };
+
   return (
     <header id="header" className={classNames([showHeader ? 'show' : 'hide'])}>
       <Container>
         <nav>
           <a href="#about" onClick={hideHeader}>
-            ABOUT
+            About
           </a>
-          <div> | </div>
+          <div> &middot; </div>
           <a href="#projects" onClick={hideHeader}>
-            PERSONAL PROJECTS
+            Personal Projects
           </a>
-          <div> | </div>
+          <div> &middot; </div>
           <a href="#timeline" onClick={hideHeader}>
-            CAREER TIMELINE
+            Career Timeline
           </a>
         </nav>
       </Container>
@@ -61,6 +62,7 @@ const Header: NextPage = () => {
 
         @media (prefers-color-scheme: dark) {
           #header {
+            text-transform: uppercase;
             color: ${colors.dark.text_primary_color};
             background-image: linear-gradient(
               to bottom,
@@ -74,7 +76,7 @@ const Header: NextPage = () => {
           display: flex;
           gap: 10px;
           padding: 20px 0;
-          color: ${colors.light.text_secondary_color};
+          color: ${colors.light.border_highlight_color};
         }
 
         a {
@@ -83,7 +85,7 @@ const Header: NextPage = () => {
 
         @media (prefers-color-scheme: dark) {
           nav {
-            color: ${colors.dark.text_secondary_color};
+            color: ${colors.dark.border_highlight_color};
           }
 
           a {
