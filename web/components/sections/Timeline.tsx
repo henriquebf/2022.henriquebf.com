@@ -126,13 +126,22 @@ const timelineItems = [
     bullets: [`Javascript`, `Lightbase`],
   },
   {
-    time: `1999 - 2001`,
+    time: `2000 - 2001`,
     duration: `1 year`,
     title: `Multiline Ltda.`,
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: `In my first internship, I assisted other developers in some tasks, mainly related to Linux and network.`,
     bullets: [`Linux`],
+  },
+  {
+    time: `1998 - 2003`,
+    duration: `6 years`,
+    title: `Pontifícia Universidade Católica de Minas Gerais`,
+    location: `Belo Horizonte, Brazil`,
+    position: `Bachelor - Control and Automation Engineer`,
+    description: `It is fair to say that the logic I was ever most proud of, was the one designed by my graduation thesis. I have written an out-of-box and simplified implementation of the trajectory generation for a robot of type SCARA. It was fully simulated in a 3D robot plugin for Matlab.`,
+    bullets: [`CIM`, `C++`, `Assembly`, `Eletronics`, `Robotics`, `PID`],
   },
 ];
 
@@ -143,17 +152,12 @@ const Timeline: NextPage = () => {
         <div className="content">
           <h2>Career Timeline</h2>
           <p>
-            Having originally graduated as a{' '}
-            <b>Control and Automation Engineer</b> in late 2003, I have always
-            followed the path of Software Development since the early stages of
-            my career. It has started in Brazil and grew internationally in the
-            United Kingdom and Germany.
+            At this current moment, I have planned a parental leave until second
+            quarter of 2022.
           </p>
           <p>
-            At this current moment, I have planned a{' '}
-            <b>parental leave until second quarter of 2022</b>. In case of any
-            interest to discuss future collaboration, please feel free to reach
-            me on{' '}
+            In case of any interest to discuss the possibility of future
+            collaboration, please feel free to reach me on{' '}
             <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>{' '}
             or any other channel provided in this website.
           </p>
@@ -182,11 +186,6 @@ const Timeline: NextPage = () => {
               );
             }
           })}
-          <div className="wrapper">
-            <div className="timeline-dummy" />
-            <div className="timeline-center last" />
-            <div className="timeline-dummy" />
-          </div>
         </div>
       </Container>
       <style jsx>{`
@@ -195,6 +194,7 @@ const Timeline: NextPage = () => {
           z-index: ${zIndexes.section};
           background-color: ${colors.light.bg_secondary_color};
           border-bottom: 1px solid ${colors.light.border_discreet_color};
+          padding-bottom: 40px;
         }
 
         .content {
