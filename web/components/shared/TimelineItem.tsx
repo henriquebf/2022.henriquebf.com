@@ -129,29 +129,34 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
         }
 
         .bullets {
-          margin: 0;
-          padding: 0;
-          padding-top: 1em;
-          height: 32px;
-        }
-
-        .bullets > li {
-          list-style-type: none;
-          float: left;
-          padding: 0 10px;
-          margin-right: 10px;
-          line-height: 30px;
-          border-radius: 15px;
-          color: ${colors.light.border_highlight_color};
-          border: 2px solid ${colors.light.border_highlight_color};
-          background-color: ${colors.light.bg_secondary_color};
+          display: none;
         }
 
         @media (min-width: ${sizes.container}) {
-          .bullets.right > li {
-            float: right;
-            margin-right: 0;
-            margin-left: 10px;
+          .bullets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            padding-top: 1em;
+            height: 32px;
+          }
+
+          .bullets.right {
+            flex-direction: row-reverse;
+          }
+
+          .bullets > li {
+            list-style-type: none;
+            padding: 0 10px;
+            line-height: 30px;
+            height: 33px;
+            border-radius: 15px;
+            text-transform: uppercase;
+            color: ${colors.light.border_highlight_color};
+            border: 2px solid ${colors.light.border_highlight_color};
+            background-color: ${colors.light.bg_secondary_color};
           }
         }
 

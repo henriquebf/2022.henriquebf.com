@@ -13,7 +13,7 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Co-founder & CTO`,
     description: `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the  application from MVP to production state and leading a small team of other 3 senior developers.`,
-    bullets: ['TYPESCRIPT', 'REACT', 'ELECTRON', 'REACT NATIVE'],
+    bullets: ['Typescript', 'React', 'Electron', 'React Native'],
     thumb: 'tempo',
     link: {
       text: `Visit Tempo website`,
@@ -38,7 +38,7 @@ const timelineItems = [
       `XU Berlin (web survey)`,
       `Fluxdrive (bespoke CMS)`,
     ],
-    bullets: ['ES6', 'REACT', 'NODE', 'MONGODB', 'DOCKER'],
+    bullets: ['ES6+', 'React', 'Node', 'MongoDB', 'Docker'],
     thumb: 'pillar',
     link: {
       text: `Visit Pillar website`,
@@ -57,7 +57,7 @@ const timelineItems = [
       `Sabin (website frontend)`,
       `Latin Travel (website)`,
     ],
-    bullets: [`ANGULAR`, `RAILS`, `NODE`, `SOCKET.IO`],
+    bullets: [`Angular`, `Rails`, `Node`, `Socket.IO`],
   },
   {
     time: `2013 - 2014`,
@@ -73,7 +73,7 @@ const timelineItems = [
       `Danica Pension (web application)`,
       `Chop Hub (MVP/web application)`,
     ],
-    bullets: [`ANGULAR`, `NODE`, `COFFEESCRIPT`, `RAILS`, `PHP`],
+    bullets: [`Angular`, `Node`, `CoffeeScript`, `Rails`, `PHP`],
     thumb: 'bdc',
   },
   {
@@ -89,7 +89,7 @@ const timelineItems = [
       `Vertu (website frontend)`,
       `VGL (website frontend)`,
     ],
-    bullets: [`RAILS`, `SPREE`, `ANGULAR`, `JQUERY`, `PHP`, `HTML5`],
+    bullets: [`Rails`, `Spree`, `Angular`, `JQuery`, `PHP`, `HTML5`],
     thumb: 'made',
   },
   {
@@ -100,7 +100,7 @@ const timelineItems = [
     position: `Fullstack Developer`,
     description: `I have collaborated with a friend’s project by implementing his MVP, with the main benefit of buidling a showcase to potential new hires.`,
     highlights: [`Mineral trade (MVP/web app)`],
-    bullets: [`PHP`, `ZEND`, `MYSQL`],
+    bullets: [`PHP`, `Zend`, `MySQL`],
   },
   {
     time: `2002 - 2010`,
@@ -114,7 +114,7 @@ const timelineItems = [
       `Tracking box (web application)`,
       `Entertainment-to-Go (kiosk)`,
     ],
-    bullets: [`JAVASCRIPT`, `PHP`, `MYSQL`, `SQLITE`, `C++`],
+    bullets: [`Javascript`, `PHP`, `MySQL`, `SQLite`, `C++`],
   },
   {
     time: `2001 - 2002`,
@@ -123,7 +123,7 @@ const timelineItems = [
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: `Hired as an intern, I was able to play my first role as a developer of a catalogue CD-ROM for my city, having a great support from the database provider.`,
-    bullets: [`JAVASCRIPT`, `LIGHTBASE`],
+    bullets: [`Javascript`, `Lightbase`],
   },
   {
     time: `1999 - 2001`,
@@ -132,7 +132,7 @@ const timelineItems = [
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: `In my first internship, I assisted other developers in some tasks, mainly related to Linux and network.`,
-    bullets: [`LINUX`],
+    bullets: [`Linux`],
   },
 ];
 
