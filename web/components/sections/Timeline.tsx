@@ -211,6 +211,7 @@ const Timeline: NextPage = () => {
         }
 
         p {
+          font-size: 1.17em;
           color: ${colors.light.text_secondary_color};
         }
 
@@ -221,6 +222,10 @@ const Timeline: NextPage = () => {
         }
 
         @media (prefers-color-scheme: dark) {
+          p {
+            color: ${colors.dark.text_secondary_color};
+          }
+
           a,
           b {
             color: ${colors.dark.text_primary_color};
@@ -251,11 +256,6 @@ const Timeline: NextPage = () => {
 
           .wrapper {
             grid-template-columns: 50% 1px 50%;
-          }
-
-          p {
-            font-size: 1.17em;
-            color: ${colors.dark.text_secondary_color};
           }
 
           .timeline-center {

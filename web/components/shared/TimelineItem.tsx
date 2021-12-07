@@ -55,6 +55,7 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
       <div className={classNames(['line', direction])}></div>
       <style jsx>{`
         .thumb {
+          display: none;
           width: 540px;
           height: 350px;
           border-radius: 15px;
@@ -67,6 +68,10 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
         }
 
         @media (min-width: ${sizes.container}) {
+          .thumb {
+            display: block;
+          }
+
           .line {
             border-bottom: 2px solid ${colors.light.border_highlight_color};
           }

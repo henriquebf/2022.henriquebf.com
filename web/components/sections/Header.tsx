@@ -53,6 +53,7 @@ const Header: NextPage = () => {
           z-index: ${zIndexes.header};
           opacity: 1;
           transition: opacity 0.25s;
+          text-transform: uppercase;
           color: ${colors.light.text_primary_color};
           background-image: linear-gradient(
             to bottom,
@@ -62,7 +63,6 @@ const Header: NextPage = () => {
 
         @media (prefers-color-scheme: dark) {
           #header {
-            text-transform: uppercase;
             color: ${colors.dark.text_primary_color};
             background-image: linear-gradient(
               to bottom,
