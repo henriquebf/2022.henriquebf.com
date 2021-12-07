@@ -8,7 +8,7 @@ import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/layout/Container';
 import SocialIcons from '@/components/shared/SocialIcons';
 
-const Intro: NextPage = () => {
+const About: NextPage = () => {
   const scrollPosition = useScrollPosition();
 
   const [showIntro, setShowIntro] = useState(true);
@@ -24,7 +24,7 @@ const Intro: NextPage = () => {
   const _handleCaretClick = () => {};
 
   return (
-    <section id="introduction">
+    <section id="about">
       <div className={classNames(['content', showIntro ? 'show' : 'hide'])}>
         <Container>
           <div className="wrapper">
@@ -38,8 +38,8 @@ const Intro: NextPage = () => {
                 specialist on React based frameworks.
               </h3>
               <h3>
-                Over 20 years experience building e-commerces and applications
-                for Web, Desktop and Mobile.
+                20+ years experience building e-commerces and applications for
+                Web, Desktop and Mobile.
               </h3>
               <div className="social-icons">
                 <SocialIcons />
@@ -53,7 +53,7 @@ const Intro: NextPage = () => {
         onClick={_handleCaretClick}
       />
       <style jsx>{`
-        #introduction {
+        #about {
           position: relative;
           z-index: ${zIndexes.section};
           height: 100vh;
@@ -63,7 +63,7 @@ const Intro: NextPage = () => {
         }
 
         @media (prefers-color-scheme: dark) {
-          #introduction {
+          #about {
             color: ${colors.dark.text_primary_color};
             background-color: ${colors.dark.bg_primary_color};
             border-bottom: 1px solid ${colors.dark.border_discreet_color};
@@ -195,4 +195,4 @@ const Intro: NextPage = () => {
   );
 };
 
-export default Intro;
+export default About;

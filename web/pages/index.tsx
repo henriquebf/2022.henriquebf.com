@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '@/components/sections/Header';
-import Intro from '@/components/sections/Intro';
+import Intro from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
 import Timeline from '@/components/sections/Timeline';
 import Footer from '@/components/sections/Footer';

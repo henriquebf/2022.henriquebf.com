@@ -10,7 +10,9 @@ const Footer: NextPage = () => {
     <section id="footer">
       <Container>
         <div className="wrapper">
-          <div className="last-update">LAST UPDATE: DECEMBER 2021</div>
+          <div className="email">
+            <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>
+          </div>
           <div>
             <div className="social">
               <SocialIcons />
@@ -32,7 +34,7 @@ const Footer: NextPage = () => {
           grid-template-columns: 100%;
         }
 
-        .last-update {
+        .email {
           display: none;
         }
 
@@ -52,7 +54,7 @@ const Footer: NextPage = () => {
             grid-template-columns: 50% 50%;
           }
 
-          .last-update {
+          .email {
             display: block;
           }
 

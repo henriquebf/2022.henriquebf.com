@@ -20,20 +20,38 @@ const Header: NextPage = () => {
     }
   }, [scrollPosition, setShowHeader]);
 
+  const hideHeader = (e: any) => {
+    e.preventDefault();
+    const target = e.target.href?.split('#')[1] ?? '';
+    const element = document.getElementById(target);
+    element?.scrollIntoView();
+    setTimeout(() => setShowHeader(false), 50);
+  };
   return (
-    <section id="header">
+    <header id="header" className={classNames([showHeader ? 'show' : 'hide'])}>
       <Container>
-        <div className={classNames(['content', showHeader ? 'show' : 'hide'])}>
-          ABOUT | ACTIVE PROJECTS | CAREER TIMELINE
-        </div>
+        <nav>
+          <a href="#about" onClick={hideHeader}>
+            ABOUT
+          </a>
+          <div> | </div>
+          <a href="#projects" onClick={hideHeader}>
+            PERSONAL PROJECTS
+          </a>
+          <div> | </div>
+          <a href="#timeline" onClick={hideHeader}>
+            CAREER TIMELINE
+          </a>
+        </nav>
       </Container>
       <style jsx>{`
         #header {
           display: none;
-          position: absolute;
           width: 100%;
           height: 65px;
           z-index: ${zIndexes.header};
+          opacity: 1;
+          transition: opacity 0.25s;
           color: ${colors.light.text_primary_color};
           background-image: linear-gradient(
             to bottom,
@@ -51,15 +69,26 @@ const Header: NextPage = () => {
           }
         }
 
-        .content {
-          top: 20px;
-          position: absolute;
-          opacity: 1;
-          transition: opacity 0.25s;
+        nav {
+          width: 100%;
+          display: flex;
+          gap: 10px;
+          padding: 20px 0;
+          color: ${colors.light.text_secondary_color};
         }
 
-        .contact {
-          float: right;
+        a {
+          color: ${colors.light.text_primary_color};
+        }
+
+        @media (prefers-color-scheme: dark) {
+          nav {
+            color: ${colors.dark.text_secondary_color};
+          }
+
+          a {
+            color: ${colors.dark.text_primary_color};
+          }
         }
 
         @media (min-width: ${sizes.container}) {
@@ -68,12 +97,12 @@ const Header: NextPage = () => {
             position: fixed;
           }
 
-          .content.hide {
+          #header.hide {
             opacity: 0;
           }
         }
       `}</style>
-    </section>
+    </header>
   );
 };
 

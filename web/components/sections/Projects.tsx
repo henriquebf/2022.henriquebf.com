@@ -27,10 +27,10 @@ const projects = [
 
 const Projects: NextPage = () => {
   return (
-    <section id="active">
+    <section id="projects">
       <Container>
         <div className="content">
-          <h2>Active Projects</h2>
+          <h2>Personal Projects</h2>
           <div className="wrapper">
             <div className="projects">
               {projects.map((item, i) => (
@@ -44,7 +44,7 @@ const Projects: NextPage = () => {
         </div>
       </Container>
       <style jsx>{`
-        #active {
+        #projects {
           position: relative;
           z-index: ${zIndexes.section};
           background-color: ${colors.light.bg_secondary_color};
@@ -62,7 +62,7 @@ const Projects: NextPage = () => {
         }
 
         @media (prefers-color-scheme: dark) {
-          #active {
+          #projects {
             background-color: ${colors.dark.bg_secondary_color};
           }
 
