@@ -30,8 +30,8 @@ const Footer: NextPage = () => {
         }
 
         .wrapper {
-          display: grid;
-          grid-template-columns: 100%;
+          display: flex;
+          justify-content: space-between;
         }
 
         .email {
@@ -56,10 +56,6 @@ const Footer: NextPage = () => {
 
           .email {
             display: block;
-          }
-
-          .social {
-            float: right;
           }
         }
       `}</style>

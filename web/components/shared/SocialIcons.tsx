@@ -52,18 +52,17 @@ const SocialIcons: NextPage = () => {
       </div>
       <style jsx>{`
         .social-icons {
+          display: flex;
           line-height: ${size};
           height: ${size};
           overflow: hidden;
         }
 
         .social-icons > div {
-          float: left;
           margin: 0 10px 0 0;
         }
 
         .social-icons > div:last-child {
-          float: left;
           margin: 0;
         }
       `}</style>
