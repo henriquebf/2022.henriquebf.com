@@ -8,19 +8,21 @@ import CyclingGoals from '@/components/shared/CyclingGoals';
 
 const projects = [
   {
-    title: `Troffee`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mollis, urna at facilisis commodo, nisi orci scelerisque nisi, at lacinia risus nisi at arcu.`,
+    title: `Troffee Cycling Club`,
+    description: `Website with personal reports, in details, about some of the best road cycling experiences around the world.`,
+    // github: `https://github.com`,
     link: `https://trofee.cc`,
   },
   {
-    title: `PDF Wrapper`,
-    description: `Nam semper semper dolor, a pharetra odio pulvinar sed. Integer porttitor nisi iaculis elit mollis feugiat. Donec et ullamcorper felis.`,
-    github: `https://github.com`,
+    title: `PDF Scan Match`,
+    description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
+    // github: `https://github.com`,
+    // link: `https://trofee.cc`,
   },
   {
     title: `Gear Alert`,
-    description: `Suspendisse nibh ipsum, venenatis ac sapien vitae, iaculis posuere neque. Donec lectus ante, tempus ac sagittis eget, tincidunt non justo.`,
-    github: `https://github.com`,
+    description: `Experimental web application that connects to strava accounts and keep maintenance track of your cycling gear.`,
+    github: `https://github.com/henriquebf/gearalert.henriquebf.com`,
     link: `https://gearalert.henriquebf.com`,
   },
 ];

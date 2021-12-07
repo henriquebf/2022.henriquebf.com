@@ -21,15 +21,24 @@ const ProjectItem: NextPage<Props> = ({ item }) => {
       <h4>{item.title}</h4>
       <p>{item.description}</p>
       <div className="icons">
-        <div>
-          <IconGithub size="20px" />
-        </div>
-        <div>
-          <IconExternalLink size="20px" />
-        </div>
+        {item.github && (
+          <div>
+            <a href={item.github} target="_blank" rel="noreferrer">
+              <IconGithub size="20px" />
+            </a>
+          </div>
+        )}
+        {item.link && (
+          <div>
+            <a href={item.link} target="_blank" rel="noreferrer">
+              <IconExternalLink size="20px" />
+            </a>
+          </div>
+        )}
       </div>
       <style jsx>{`
         p {
+          padding-right: 20px;
           color: ${colors.light.text_secondary_color};
         }
 
