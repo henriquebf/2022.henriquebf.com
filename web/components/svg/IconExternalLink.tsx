@@ -30,9 +30,18 @@ const Svg: NextPage<Props> = ({ size }) => {
         #icon-external-link {
           stroke: ${colors.light.text_primary_color};
         }
+
+        #icon-external-link:hover {
+          stroke: ${colors.light.text_active_color};
+        }
+
         @media (prefers-color-scheme: dark) {
           #icon-external-link {
             stroke: ${colors.dark.text_primary_color};
+          }
+
+          #icon-external-link:hover {
+            stroke: ${colors.dark.text_active_color};
           }
         }
       `}</style>

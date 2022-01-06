@@ -27,7 +27,7 @@ const Svg: NextPage<Props> = ({ size }) => {
       </svg>
       <style jsx>{`
         circle {
-          fill: ${colors.light.text_secondary_color};
+          fill: ${colors.light.text_primary_color};
         }
 
         circle:hover {
@@ -36,7 +36,7 @@ const Svg: NextPage<Props> = ({ size }) => {
 
         @media (prefers-color-scheme: dark) {
           circle {
-            fill: ${colors.dark.text_secondary_color};
+            fill: ${colors.dark.text_primary_color};
           }
 
           circle:hover {

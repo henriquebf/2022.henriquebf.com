@@ -28,9 +28,18 @@ const Svg: NextPage<Props> = ({ size }) => {
         #icon-github {
           stroke: ${colors.light.text_primary_color};
         }
+
+        #icon-github:hover {
+          stroke: ${colors.light.text_active_color};
+        }
+
         @media (prefers-color-scheme: dark) {
           #icon-github {
             stroke: ${colors.dark.text_primary_color};
+          }
+
+          #icon-github:hover {
+            stroke: ${colors.dark.text_active_color};
           }
         }
       `}</style>

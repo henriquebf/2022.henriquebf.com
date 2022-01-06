@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import { classNames } from '@/helpers/classnameHelper';
@@ -29,7 +30,11 @@ type Props = {
 const TimelineItem: NextPage<Props> = ({ direction, item }) => {
   return (
     <div className="timeline-item">
-      {item.thumb && <div className={classNames(['thumb', direction])}></div>}
+      {item.thumb && (
+        <div className={classNames(['thumb', direction])}>
+          <Image src={`/${item.thumb}`} alt="Tempo" width={540} height={250} />
+        </div>
+      )}
       <div className={classNames(['title', direction])}>
         <h3>{item.title}</h3>
       </div>
@@ -57,8 +62,9 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
         .thumb {
           display: none;
           width: 540px;
-          height: 350px;
+          height: 250px;
           border-radius: 15px;
+          overflow: hidden;
           background-color: ${colors.light.border_discreet_color};
           border: 2px solid ${colors.light.border_highlight_color};
         }
@@ -73,7 +79,7 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
           }
 
           .line {
-            border-bottom: 2px solid ${colors.light.border_highlight_color};
+            border-bottom: 1px solid ${colors.light.border_highlight_color};
           }
 
           .left {
@@ -107,6 +113,7 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
         @media (prefers-color-scheme: dark) {
           .thumb {
             background-color: ${colors.dark.border_discreet_color};
+            border: 2px solid ${colors.dark.border_highlight_color};
           }
 
           .description {
@@ -115,7 +122,7 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
 
           @media (min-width: ${sizes.container}) {
             .line {
-              border-bottom: 2px solid ${colors.dark.border_highlight_color};
+              border-bottom: 1px solid ${colors.dark.border_highlight_color};
             }
           }
         }
