@@ -14,16 +14,16 @@ const projects = [
   //   link: `https://trofee.cc`,
   // },
   {
-    title: `PDF Scan Match`,
-    description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
-    github: `https://github.com/henriquebf/pdf-scan-match`,
-    link: `https://pdf-scan-match.henriquebf.com`,
-  },
-  {
     title: `Gear Alert`,
     description: `Experimental web application that connects to strava accounts and keep maintenance track of your cycling gear.`,
     github: `https://github.com/henriquebf/gearalert.henriquebf.com`,
     link: `https://gearalert.henriquebf.com`,
+  },
+  {
+    title: `PDF Scan Match`,
+    description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
+    // github: `https://github.com/henriquebf/pdf-scan-match`,
+    // link: `https://pdf-scan-match.henriquebf.com`,
   },
 ];
 

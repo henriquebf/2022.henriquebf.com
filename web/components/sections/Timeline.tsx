@@ -14,7 +14,7 @@ const timelineItems = [
     position: `Co-founder & CTO`,
     description: `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the  application from MVP to production state and leading a small team of other 3 senior developers.`,
     bullets: ['Typescript', 'React + Redux', 'Electron', 'React Native'],
-    thumb: 'timeline-item-tempo.jpg',
+    thumb: 'timeline-thumb-tempo.svg',
     link: {
       text: `Visit Tempo website`,
       url: `https://yourtempo.co`,
@@ -39,7 +39,7 @@ const timelineItems = [
       `Fluxdrive (bespoke CMS)`,
     ],
     bullets: ['ES6+', 'React + Redux', 'Node', 'MongoDB', 'Docker'],
-    thumb: 'timeline-item-pillar.jpg',
+    thumb: 'timeline-thumb-pillar.svg',
     link: {
       text: `Visit Pillar website`,
       url: `https://pillarstudio.com`,
