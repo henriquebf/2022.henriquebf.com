@@ -191,19 +191,21 @@ const Timeline: NextPage = () => {
           position: relative;
           z-index: ${zIndexes.section};
           background-color: ${colors.light.bg_secondary_color};
+        }
+
+        .content {
+          padding: 20px 0 60px 0;
           border-bottom: 1px solid ${colors.light.border_discreet_color};
-          padding-bottom: 40px;
         }
 
         @media (prefers-color-scheme: dark) {
           #timeline {
             background-color: ${colors.dark.bg_secondary_color};
+          }
+
+          .content {
             border-bottom: 1px solid ${colors.dark.border_discreet_color};
           }
-        }
-
-        .content {
-          padding: 20px 0;
         }
 
         .timeline-top {

@@ -44,7 +44,7 @@ const Header: NextPage = () => {
             Career Timeline
           </a>
           <div> &middot; </div>
-          <a href="#timeline" onClick={hideHeader}>
+          <a href="#availability" onClick={hideHeader}>
             Availability
           </a>
         </nav>
