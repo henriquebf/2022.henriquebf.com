@@ -113,9 +113,9 @@ const About: NextPage = () => {
         }
 
         .avatar {
-          width: 100px;
-          height: 100px;
-          border-radius: 50px;
+          width: 120px;
+          height: 120px;
+          border-radius: 60px;
           background-image: url('avatar.jpg');
           background-size: cover;
           border: 2px solid ${colors.light.border_highlight_color};
