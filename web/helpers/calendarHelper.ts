@@ -17,8 +17,11 @@ type Month = {
   year: number;
 };
 
-export const getMonth = (n: number): Month => {
-  const date = new Date();
+export const getMonth = (
+  n: number,
+  inputdate?: Date // Only used by testing suite
+): Month => {
+  const date = inputdate || new Date();
   date.setMonth(date.getMonth() + n);
   const name = monthNames[date.getMonth()];
   const year = date.getFullYear();
@@ -29,7 +32,7 @@ export const getMonth = (n: number): Month => {
 export const getHours = (
   name: string,
   year: number,
-  settings?: string // 'Jan:64,Mar:100'
+  settings?: string // 'Jan:64,Mar:100' -> monthName:hours
 ) => {
   let hours = 128;
 
