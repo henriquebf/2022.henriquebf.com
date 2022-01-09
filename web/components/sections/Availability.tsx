@@ -29,8 +29,8 @@ const Availability: NextPage<Props> = ({ settingsAvailability }) => {
           </div>
           <div className="note">
             <p>
-              The availability described above is flexible. Please get in touch
-              for precise enquires about specific dates and hourly rates.
+              This information is estimated and can be flexible. Please get in
+              touch for specific dates and hourly rates.
             </p>
           </div>
         </div>

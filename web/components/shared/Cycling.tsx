@@ -14,6 +14,8 @@ const Cycling: NextPage<Props> = ({ cyclingGoal }) => {
   const schedule = getSchedule(total, complete);
   const currentYear = new Date().getFullYear();
 
+  console.log('progress', progress);
+
   return (
     <div className="project-item">
       <h4>Cycling Goal for {currentYear}</h4>
@@ -40,7 +42,13 @@ const Cycling: NextPage<Props> = ({ cyclingGoal }) => {
           border-radius: 15px;
           color: ${colors.light.border_highlight_color};
           border: 2px solid ${colors.light.border_highlight_color};
-          background-color: ${colors.light.border_discreet_color};
+          background-image: linear-gradient(
+            to right,
+            ${colors.light.progress_complete},
+            ${colors.light.progress_complete} ${progress}%,
+            ${colors.light.progress_remaining} ${progress + 1}%,
+            ${colors.light.progress_remaining}
+          );
         }
 
         @media (min-width: ${sizes.container}) {
@@ -58,7 +66,13 @@ const Cycling: NextPage<Props> = ({ cyclingGoal }) => {
           .progress-bar {
             color: ${colors.dark.border_highlight_color};
             border: 2px solid ${colors.dark.border_highlight_color};
-            background-color: ${colors.dark.border_discreet_color};
+            background-image: linear-gradient(
+              to right,
+              ${colors.light.progress_complete},
+              ${colors.light.progress_complete} ${progress}%,
+              ${colors.light.progress_remaining} ${progress + 1}%,
+              ${colors.light.progress_remaining}
+            );
           }
         }
       `}</style>
