@@ -1,16 +1,33 @@
 import type { NextPage } from 'next';
 import zIndexes from '@/config/zIndexes.json';
 import colors from '@/config/colors.json';
-import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
+import Month from '@/components/shared/Month';
+import { getMonth } from '@/helpers/calendarHelper';
 
-const Availability: NextPage = () => {
+type Props = {
+  settings?: string;
+};
+
+const Availability: NextPage<Props> = ({ settings }) => {
+  const months = [0, 1, 2, 3, 4, 5].map((n) => getMonth(n));
+
   return (
     <section id="availability">
       <Container>
         <div className="content">
-          <h2>Availability</h2>
-          <div className="wrapper"></div>
+          <h2>Availability *</h2>
+          <div className="calendars">
+            {months.map(({ name, year }) => (
+              <Month key={name} settings={settings} name={name} year={year} />
+            ))}
+          </div>
+          <div className="note">
+            <p>
+              * The availability described above is flexible. Please get in
+              touch for precise enquires about dates and hourly rates.
+            </p>
+          </div>
         </div>
       </Container>
       <style jsx>{`
@@ -25,10 +42,13 @@ const Availability: NextPage = () => {
           padding: 20px 0;
         }
 
-        .wrapper,
-        .availability {
-          display: grid;
-          grid-template-columns: 100%;
+        .calendars {
+          display: flex;
+          gap: 20px;
+        }
+
+        .note {
+          color: ${colors.light.text_secondary_color};
         }
 
         @media (prefers-color-scheme: dark) {
@@ -36,15 +56,9 @@ const Availability: NextPage = () => {
             background-color: ${colors.dark.bg_secondary_color};
             border-bottom: 1px solid ${colors.dark.border_discreet_color};
           }
-        }
 
-        @media (min-width: ${sizes.container}) {
-          .wrapper {
-            grid-template-columns: 66% 33%;
-          }
-
-          .availability {
-            grid-template-columns: 50% 50%;
+          .note {
+            color: ${colors.dark.text_secondary_color};
           }
         }
       `}</style>
