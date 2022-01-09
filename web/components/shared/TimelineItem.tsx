@@ -88,6 +88,7 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
 
           .right {
             padding-left: 60px;
+            margin-left: -1px; /* fix: remove 1px gab to the vertical line */
           }
 
           .thumb,
