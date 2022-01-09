@@ -6,7 +6,7 @@ import Month from '@/components/shared/Month';
 import { getMonth } from '@/helpers/calendarHelper';
 
 type Props = {
-  settings?: string;
+  settings: string;
 };
 
 const Availability: NextPage<Props> = ({ settings }) => {
@@ -25,7 +25,7 @@ const Availability: NextPage<Props> = ({ settings }) => {
           <div className="note">
             <p>
               The availability described above is flexible. Please get in touch
-              for precise enquires about dates and hourly rates.
+              for precise enquires about specific dates and hourly rates.
             </p>
           </div>
         </div>

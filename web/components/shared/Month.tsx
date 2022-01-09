@@ -7,7 +7,7 @@ import { classNames } from '@/helpers/classnameHelper';
 type Props = {
   name: string;
   year: number;
-  settings?: string;
+  settings: string;
 };
 
 const Month: NextPage<Props> = ({ name, year, settings }) => {
