@@ -12,7 +12,7 @@ const timelineItems = [
     title: `Tempo GmbH`,
     location: `Berlin, Germany`,
     position: `Co-founder & CTO`,
-    description: `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the  application from MVP to production state and leading a small team of other 3 senior developers.`,
+    description: `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the  application from MVP to production state and leading other 3 developers.`,
     bullets: ['Typescript', 'React + Redux', 'Electron', 'React Native'],
     thumb: 'timeline-thumb-tempo.svg',
     link: {
@@ -26,7 +26,7 @@ const timelineItems = [
     title: `Pillar GmbH`,
     location: `Berlin, Germany`,
     position: `Co-founder & Fullstack Developer`,
-    description: `Co-running a business to implement MVPs, websites and small e-commerces for external clients. Our highest focus was providing the best user experience.`,
+    description: `Co-running a business to implement MVPs, websites and small e-commerce solutions for external clients. The highest goal is providing the best user experience.`,
     highlights: [
       `Tempo (MVP/desktop application)`,
       `Diggsweep (MVP/web application)`,
