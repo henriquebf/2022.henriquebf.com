@@ -37,7 +37,7 @@ const Header: NextPage = () => {
           </a>
           <div> &middot; </div>
           <a href="#projects" onClick={hideHeader}>
-            Personal Projects
+            Projects & Interest
           </a>
           <div> &middot; </div>
           <a href="#timeline" onClick={hideHeader}>

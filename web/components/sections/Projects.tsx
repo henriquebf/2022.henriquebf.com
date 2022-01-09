@@ -41,7 +41,7 @@ const Projects: NextPage<Props> = ({ cyclingGoal }) => {
     <section id="projects">
       <Container>
         <div className="content">
-          <h2>Personal Projects</h2>
+          <h2>Projects & Interest</h2>
           <div className="wrapper">
             <div className="projects">
               {projects.map((item, i) => (
