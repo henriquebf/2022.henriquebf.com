@@ -19,11 +19,16 @@ const projects = [
     github: `https://github.com/henriquebf/gearalert.henriquebf.com`,
     link: `https://gearalert.henriquebf.com`,
   },
+  // {
+  //   title: `PDF Scan Match`,
+  //   description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
+  //   // github: `https://github.com/henriquebf/pdf-scan-match`,
+  //   // link: `https://pdf-scan-match.henriquebf.com`,
+  // },
+
   {
-    title: `PDF Scan Match`,
-    description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
-    // github: `https://github.com/henriquebf/pdf-scan-match`,
-    // link: `https://pdf-scan-match.henriquebf.com`,
+    title: `XR Development`,
+    description: `I'm currently experimenting with Unity 3D framework with the inital goal of learning the basics of an Oculus Quest application.`,
   },
 ];
 
