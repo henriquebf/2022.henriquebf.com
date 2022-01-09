@@ -34,7 +34,6 @@ const Home: NextPage<Props> = ({ settings }) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const settings = process.env.SETTINGS_AVAILABILITY;
-  console.log(`1 settings:${settings}`);
   return { props: { settings } };
 };
 
