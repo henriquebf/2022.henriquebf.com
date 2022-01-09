@@ -29,7 +29,7 @@ const About: NextPage = () => {
         <Container>
           <div className="wrapper">
             <div className={classNames(['scale', showIntro ? 'show' : 'hide'])}>
-              <div className="avatar"></div>
+              <div className="avatar" />
               <h1>
                 I am <b>Henrique Ferreira</b>
               </h1>
@@ -113,9 +113,11 @@ const About: NextPage = () => {
         }
 
         .avatar {
-          width: 100px;
-          height: 100px;
-          border-radius: 50px;
+          width: 120px;
+          height: 120px;
+          border-radius: 60px;
+          background-image: url('avatar.jpg');
+          background-size: cover;
           border: 2px solid ${colors.light.border_highlight_color};
           background-color: ${colors.light.border_discreet_color};
         }

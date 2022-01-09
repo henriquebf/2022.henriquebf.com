@@ -8,7 +8,7 @@ import Availability from '@/components/sections/Availability';
 import Footer from '@/components/sections/Footer';
 
 type Props = {
-  settings?: string;
+  settings: string;
 };
 
 const Home: NextPage<Props> = ({ settings }) => {
@@ -33,7 +33,7 @@ const Home: NextPage<Props> = ({ settings }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const settings = process.env.SETTINGS_AVAILABILITY;
+  const settings = process.env.SETTINGS_AVAILABILITY || '';
   return { props: { settings } };
 };
 
