@@ -4,7 +4,8 @@ import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import ProjectItem from '@/components/shared/ProjectItem';
-import CyclingGoals from '@/components/shared/CyclingGoals';
+import Cycling from '@/components/shared/Cycling';
+import { CyclingGoal } from '@/types/CyclingTypes';
 
 const projects = [
   {
@@ -31,7 +32,11 @@ const projects = [
   // },
 ];
 
-const Projects: NextPage = () => {
+type Props = {
+  cyclingGoal: CyclingGoal;
+};
+
+const Projects: NextPage<Props> = ({ cyclingGoal }) => {
   return (
     <section id="projects">
       <Container>
@@ -44,7 +49,7 @@ const Projects: NextPage = () => {
               ))}
             </div>
             <div className="goals">
-              <CyclingGoals />
+              <Cycling cyclingGoal={cyclingGoal} />
             </div>
           </div>
         </div>

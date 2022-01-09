@@ -6,12 +6,15 @@ import Projects from '@/components/sections/Projects';
 import Timeline from '@/components/sections/Timeline';
 import Availability from '@/components/sections/Availability';
 import Footer from '@/components/sections/Footer';
+import { SettingsAvailability } from '@/types/SettingsTypes';
+import { CyclingGoal } from '@/types/CyclingTypes';
 
 type Props = {
-  settings: string;
+  settingsAvailability: SettingsAvailability;
+  cyclingGoal: CyclingGoal;
 };
 
-const Home: NextPage<Props> = ({ settings }) => {
+const Home: NextPage<Props> = ({ settingsAvailability, cyclingGoal }) => {
   return (
     <>
       <Head>
@@ -24,17 +27,27 @@ const Home: NextPage<Props> = ({ settings }) => {
       </Head>
       <Header />
       <Intro />
-      <Projects />
+      <Projects cyclingGoal={cyclingGoal} />
       <Timeline />
-      <Availability settings={settings} />
+      <Availability settingsAvailability={settingsAvailability} />
       <Footer />
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const settings = process.env.SETTINGS_AVAILABILITY || '';
-  return { props: { settings } };
+  const settingsAvailability: SettingsAvailability =
+    process.env.SETTINGS_AVAILABILITY || '';
+  const cyclingGoal: CyclingGoal = {
+    total: process.env.CYCLING_YEARLY
+      ? parseInt(process.env.CYCLING_YEARLY)
+      : 10000,
+    complete: process.env.CYCLING_COMPLETE
+      ? parseInt(process.env.CYCLING_COMPLETE)
+      : 0,
+  };
+
+  return { props: { settingsAvailability, cyclingGoal } };
 };
 
 export default Home;

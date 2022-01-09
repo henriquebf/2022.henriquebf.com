@@ -261,12 +261,7 @@ const Timeline: NextPage = () => {
             width: 100px;
             height: 1px;
             margin: 0 auto;
-            background-image: linear-gradient(
-              to right,
-              ${colors.light.border_highlight_color},
-              ${colors.light.border_highlight_color},
-              ${colors.light.border_highlight_color}
-            );
+            background-color: ${colors.light.border_highlight_color};
           }
 
           .wrapper {
@@ -309,12 +304,7 @@ const Timeline: NextPage = () => {
 
           @media (prefers-color-scheme: dark) {
             .timeline-top {
-              background-image: linear-gradient(
-                to right,
-                ${colors.dark.border_highlight_color},
-                ${colors.dark.border_highlight_color},
-                ${colors.dark.border_highlight_color}
-              );
+              background-color: ${colors.dark.border_highlight_color};
             }
 
             .timeline-center.middle:after {

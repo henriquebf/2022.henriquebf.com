@@ -1,22 +1,28 @@
 {
   "light": {
-    "bg_primary_color": "#071A2D",
-    "bg_primary_gradient": "#071A2D, rgba(7, 26, 45, 0.9) 50%, rgba(7, 26, 45, 0)",
-    "bg_secondary_color": "#0E243F",
-    "text_primary_color": "#CAD8F3",
-    "text_secondary_color": "#8793AD",
-    "text_active_color": "#40FDDC",
-    "border_discreet_color": "#203852",
-    "border_highlight_color": "#40FDDC"
+    "bg_primary_color": "rgba(7, 26, 45, 1)",
+    "bg_primary_gradient": "rgba(7, 26, 45, 1), rgba(7, 26, 45, 0.9) 50%, rgba(7, 26, 45, 0)",
+    "bg_secondary_color": "rgba(14, 36, 63, 1)",
+    "text_primary_color": "rgba(202, 216, 243, 1)",
+    "text_secondary_color": "rgba(135, 147, 173, 1)",
+    "text_active_color": "rgba(64, 253, 220, 1)",
+    "border_discreet_color": "rgba(32, 56, 82, 1)",
+    "border_highlight_color": "rgba(64, 253, 220, 1)",
+    "progress_complete": "rgba(64, 253, 220, 0.5)",
+    "progress_remaining": "rgba(32, 56, 82, 1)",
+    "availability_warning": "rgba(242, 169, 59, 1)"
   },
   "dark": {
-    "bg_primary_color": "#071A2D",
-    "bg_primary_gradient": "#071A2D, rgba(7, 26, 45, 0.9) 50%, rgba(7, 26, 45, 0)",
-    "bg_secondary_color": "#0E243F",
-    "text_primary_color": "#CAD8F3",
-    "text_secondary_color": "#8793AD",
-    "text_active_color": "#40FDDC",
-    "border_discreet_color": "#203852",
-    "border_highlight_color": "#40FDDC"
+    "bg_primary_color": "rgba(7, 26, 45, 1)",
+    "bg_primary_gradient": "rgba(7, 26, 45, 1), rgba(7, 26, 45, 0.9) 50%, rgba(7, 26, 45, 0)",
+    "bg_secondary_color": "rgba(14, 36, 63, 1)",
+    "text_primary_color": "rgba(202, 216, 243, 1)",
+    "text_secondary_color": "rgba(135, 147, 173, 1)",
+    "text_active_color": "rgba(64, 253, 220, 1)",
+    "border_discreet_color": "rgba(32, 56, 82, 1)",
+    "border_highlight_color": "rgba(64, 253, 220, 1)",
+    "progress_complete": "rgba(64, 253, 220, 0.5)",
+    "progress_remaining": "rgba(32, 56, 82, 1)",
+    "availability_warning": "rgba(242, 169, 59, 1)"
   }
 }

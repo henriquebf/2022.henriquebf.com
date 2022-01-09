@@ -6,10 +6,10 @@ import Month from '@/components/shared/Month';
 import { getMonth } from '@/helpers/calendarHelper';
 
 type Props = {
-  settings: string;
+  settingsAvailability: string;
 };
 
-const Availability: NextPage<Props> = ({ settings }) => {
+const Availability: NextPage<Props> = ({ settingsAvailability }) => {
   const months = [0, 1, 2, 3, 4, 5].map((n) => getMonth(n));
 
   return (
@@ -19,13 +19,18 @@ const Availability: NextPage<Props> = ({ settings }) => {
           <h2>Availability</h2>
           <div className="calendars">
             {months.map(({ name, year }) => (
-              <Month key={name} settings={settings} name={name} year={year} />
+              <Month
+                key={name}
+                settingsAvailability={settingsAvailability}
+                name={name}
+                year={year}
+              />
             ))}
           </div>
           <div className="note">
             <p>
-              The availability described above is flexible. Please get in touch
-              for precise enquires about specific dates and hourly rates.
+              This information is estimated and can be flexible. Please get in
+              touch for specific dates and hourly rates.
             </p>
           </div>
         </div>

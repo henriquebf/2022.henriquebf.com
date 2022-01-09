@@ -20,7 +20,8 @@
       "@/components/*": ["components/*"],
       "@/hooks/*": ["hooks/*"],
       "@/helpers/*": ["helpers/*"],
-      "@/config/*": ["config/*"]
+      "@/config/*": ["config/*"],
+      "@/types/*": ["types/*"]
     }
   },
   "include": [
