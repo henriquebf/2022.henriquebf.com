@@ -18,22 +18,60 @@ const Month: NextPage<Props> = ({ name, year, settings }) => {
       <div className="calendar">
         {name} {year}
       </div>
-      {hours >= 64 && <div className="hours">{hours}h</div>}
-      {hours > 0 && hours < 64 && (
-        <div className={classNames(['hours', 'warning'])}>{hours}h</div>
+
+      {hours > 0 && (
+        <div
+          className={classNames([
+            'info',
+            'hours',
+            hours < 64 ? 'warning' : undefined,
+          ])}
+        >
+          {`${hours}h`}
+        </div>
       )}
-      {hours === 0 && <div className="unavailable">unavailable</div>}
+
+      {hours === 0 && (
+        <div className={classNames(['info', 'unavailable'])}>unavailable</div>
+      )}
 
       <style jsx>{`
         .month {
-          width: 100%;
-          height: 80px;
-          padding: 20px;
+          position: relative;
+          width: 165px;
+          height: 140px;
           border-radius: 15px;
           padding: 10px;
+          margin-bottom: 20px;
           color: ${colors.light.border_highlight_color};
           border: 2px solid ${colors.light.border_highlight_color};
           background-color: ${colors.light.border_discreet_color};
+        }
+
+        .hours {
+          font-size: 2em;
+        }
+
+        .unavailable {
+          font-size: 1.2em;
+        }
+
+        .calendar {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          padding: 10px;
+        }
+
+        .info {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .hours {
@@ -62,7 +100,9 @@ const Month: NextPage<Props> = ({ name, year, settings }) => {
 
         @media (min-width: ${sizes.container}) {
           .month {
+            width: 183px;
             height: 150px;
+            margin-bottom: 0;
           }
 
           .hours {

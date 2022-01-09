@@ -16,7 +16,7 @@ const Availability: NextPage<Props> = ({ settings }) => {
     <section id="availability">
       <Container>
         <div className="content">
-          <h2>Availability *</h2>
+          <h2>Availability</h2>
           <div className="calendars">
             {months.map(({ name, year }) => (
               <Month key={name} settings={settings} name={name} year={year} />
@@ -24,8 +24,8 @@ const Availability: NextPage<Props> = ({ settings }) => {
           </div>
           <div className="note">
             <p>
-              * The availability described above is flexible. Please get in
-              touch for precise enquires about dates and hourly rates.
+              The availability described above is flexible. Please get in touch
+              for precise enquires about dates and hourly rates.
             </p>
           </div>
         </div>
@@ -44,7 +44,8 @@ const Availability: NextPage<Props> = ({ settings }) => {
 
         .calendars {
           display: flex;
-          gap: 20px;
+          flex-wrap: wrap;
+          justify-content: space-between;
         }
 
         .note {
