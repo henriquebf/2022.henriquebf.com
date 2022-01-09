@@ -7,11 +7,11 @@ import { classNames } from '@/helpers/classnameHelper';
 type Props = {
   name: string;
   year: number;
-  settings: string;
+  settingsAvailability: string;
 };
 
-const Month: NextPage<Props> = ({ name, year, settings }) => {
-  const hours = getHours(name, year, settings);
+const Month: NextPage<Props> = ({ name, year, settingsAvailability }) => {
+  const hours = getHours(name, year, settingsAvailability);
 
   return (
     <div className="month">
