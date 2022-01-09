@@ -7,23 +7,23 @@ import ProjectItem from '@/components/shared/ProjectItem';
 import CyclingGoals from '@/components/shared/CyclingGoals';
 
 const projects = [
-  {
-    title: `Troffee Cycling Club`,
-    description: `Website including my personal reports about most of the best road cycling experiences around the world.`,
-    github: `https://github.com/henriquebf/troffee`,
-    link: `https://trofee.cc`,
-  },
-  {
-    title: `PDF Scan Match`,
-    description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
-    github: `https://github.com/henriquebf/pdf-scan-match`,
-    link: `https://pdf-scan-match.henriquebf.com`,
-  },
+  // {
+  //   title: `Troffee Cycling Club`,
+  //   description: `A Platform to share cycling experiences. Alpine climbs, touring routes and information about products related to the sport.`,
+  //   github: `https://github.com/henriquebf/troffee`,
+  //   link: `https://trofee.cc`,
+  // },
   {
     title: `Gear Alert`,
     description: `Experimental web application that connects to strava accounts and keep maintenance track of your cycling gear.`,
     github: `https://github.com/henriquebf/gearalert.henriquebf.com`,
     link: `https://gearalert.henriquebf.com`,
+  },
+  {
+    title: `PDF Scan Match`,
+    description: `Simple Mac OS application to organise scanned PDF documents in order to match the front and back of each page. `,
+    // github: `https://github.com/henriquebf/pdf-scan-match`,
+    // link: `https://pdf-scan-match.henriquebf.com`,
   },
 ];
 
@@ -53,7 +53,7 @@ const Projects: NextPage = () => {
         }
 
         .content {
-          padding: 20px 0;
+          padding: 20px 0 40px 0;
           border-bottom: 1px solid ${colors.light.border_discreet_color};
         }
 

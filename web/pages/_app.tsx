@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         a:hover {
           color: ${colors.light.text_active_color};
-          text-decoration: underline;
+          text-decoration: none;
         }
 
         @media (prefers-color-scheme: dark) {

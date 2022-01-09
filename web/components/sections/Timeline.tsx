@@ -13,8 +13,8 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Co-founder & CTO`,
     description: `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the  application from MVP to production state and leading a small team of other 3 senior developers.`,
-    bullets: ['Typescript', 'React', 'Electron', 'React Native'],
-    thumb: 'tempo',
+    bullets: ['Typescript', 'React + Redux', 'Electron', 'React Native'],
+    thumb: 'timeline-thumb-tempo.svg',
     link: {
       text: `Visit Tempo website`,
       url: `https://yourtempo.co`,
@@ -38,8 +38,8 @@ const timelineItems = [
       `XU Berlin (web survey)`,
       `Fluxdrive (bespoke CMS)`,
     ],
-    bullets: ['ES6+', 'React', 'Node', 'MongoDB', 'Docker'],
-    thumb: 'pillar',
+    bullets: ['ES6+', 'React + Redux', 'Node', 'MongoDB', 'Docker'],
+    thumb: 'timeline-thumb-pillar.svg',
     link: {
       text: `Visit Pillar website`,
       url: `https://pillarstudio.com`,
@@ -74,7 +74,6 @@ const timelineItems = [
       `Chop Hub (MVP/web application)`,
     ],
     bullets: [`Angular`, `Node`, `CoffeeScript`, `Rails`, `PHP`],
-    thumb: 'bdc',
   },
   {
     time: `2011 - 2013`,
@@ -90,7 +89,6 @@ const timelineItems = [
       `VGL (website frontend)`,
     ],
     bullets: [`Rails`, `Spree`, `Angular`, `JQuery`, `PHP`, `HTML5`],
-    thumb: 'made',
   },
   {
     time: `2011`,
@@ -126,13 +124,22 @@ const timelineItems = [
     bullets: [`Javascript`, `Lightbase`],
   },
   {
-    time: `1999 - 2001`,
+    time: `2000 - 2001`,
     duration: `1 year`,
     title: `Multiline Ltda.`,
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: `In my first internship, I assisted other developers in some tasks, mainly related to Linux and network.`,
     bullets: [`Linux`],
+  },
+  {
+    time: `1998 - 2003`,
+    duration: `6 years`,
+    title: `Pontifícia Universidade Católica de Minas Gerais`,
+    location: `Belo Horizonte, Brazil`,
+    position: `Bachelor - Control and Automation Engineer`,
+    description: `It is fair to say that the logic I was ever most proud of, was the one designed by my graduation thesis. It was an out-of-the-box and simplified implementation of the trajectory generation for a robot of type SCARA. It was visually simulated in a 3D robot plugin for Matlab.`,
+    bullets: [`CIM`, `C++`, `Assembly`, `Eletronics`, `Robotics`, `PID`],
   },
 ];
 
@@ -143,17 +150,12 @@ const Timeline: NextPage = () => {
         <div className="content">
           <h2>Career Timeline</h2>
           <p>
-            Having originally graduated as a{' '}
-            <b>Control and Automation Engineer</b> in late 2003, I have always
-            followed the path of Software Development since the early stages of
-            my career. It has started in Brazil and grew internationally in the
-            United Kingdom and Germany.
+            <b>Current status:</b> Parental leave from december 2021 until April
+            2022.
           </p>
           <p>
-            At this current moment, I have planned a{' '}
-            <b>parental leave until second quarter of 2022</b>. In case of any
-            interest to discuss future collaboration, please feel free to reach
-            me on{' '}
+            In case of any interest to discuss the possibility of future
+            collaboration, please feel free to reach me on{' '}
             <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>{' '}
             or any other channel provided in this website.
           </p>
@@ -182,11 +184,6 @@ const Timeline: NextPage = () => {
               );
             }
           })}
-          <div className="wrapper">
-            <div className="timeline-dummy" />
-            <div className="timeline-center last" />
-            <div className="timeline-dummy" />
-          </div>
         </div>
       </Container>
       <style jsx>{`
@@ -194,11 +191,21 @@ const Timeline: NextPage = () => {
           position: relative;
           z-index: ${zIndexes.section};
           background-color: ${colors.light.bg_secondary_color};
-          border-bottom: 1px solid ${colors.light.border_discreet_color};
         }
 
         .content {
-          padding: 20px 0;
+          padding: 20px 0 60px 0;
+          border-bottom: 1px solid ${colors.light.border_discreet_color};
+        }
+
+        @media (prefers-color-scheme: dark) {
+          #timeline {
+            background-color: ${colors.dark.bg_secondary_color};
+          }
+
+          .content {
+            border-bottom: 1px solid ${colors.dark.border_discreet_color};
+          }
         }
 
         .timeline-top {
@@ -221,6 +228,10 @@ const Timeline: NextPage = () => {
           color: ${colors.light.text_primary_color};
         }
 
+        a:hover {
+          color: ${colors.light.border_highlight_color};
+        }
+
         @media (prefers-color-scheme: dark) {
           p {
             color: ${colors.dark.text_secondary_color};
@@ -229,6 +240,10 @@ const Timeline: NextPage = () => {
           a,
           b {
             color: ${colors.dark.text_primary_color};
+          }
+
+          a:hover {
+            color: ${colors.dark.border_highlight_color};
           }
         }
 
@@ -244,7 +259,7 @@ const Timeline: NextPage = () => {
           .timeline-top {
             display: block;
             width: 100px;
-            height: 2px;
+            height: 1px;
             margin: 0 auto;
             background-image: linear-gradient(
               to right,
@@ -268,7 +283,7 @@ const Timeline: NextPage = () => {
           .timeline-center:after {
             content: '';
             position: absolute;
-            width: 2px;
+            width: 1px;
             top: 0;
             bottom: 0;
             left: 50%;
@@ -288,45 +303,27 @@ const Timeline: NextPage = () => {
             background-color: ${colors.light.border_highlight_color};
           }
 
-          .timeline-center.last:after {
-            background-image: linear-gradient(
-              to bottom,
-              ${colors.light.border_highlight_color},
-              rgba(0, 0, 0, 0)
-            );
-          }
-
           .timeline-dummy {
             display: block;
           }
-        }
 
-        @media (prefers-color-scheme: dark) {
-          #timeline {
-            background-color: ${colors.dark.bg_secondary_color};
-            border-bottom: 1px solid ${colors.dark.border_discreet_color};
-          }
-
-          .timeline-center.middle:after {
-            background-color: ${colors.dark.border_highlight_color};
-          }
-
-          .timeline-center.first:after {
-            background-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0),
-                ${colors.dark.border_highlight_color}
-              )
-              1 100%;
-          }
-
-          .timeline-center.last:after {
-            background-image: linear-gradient(
-                to bottom,
+          @media (prefers-color-scheme: dark) {
+            .timeline-top {
+              background-image: linear-gradient(
+                to right,
                 ${colors.dark.border_highlight_color},
-                rgba(0, 0, 0, 0)
-              )
-              1 100%;
+                ${colors.dark.border_highlight_color},
+                ${colors.dark.border_highlight_color}
+              );
+            }
+
+            .timeline-center.middle:after {
+              background-color: ${colors.dark.border_highlight_color};
+            }
+
+            .timeline-center.first:after {
+              background-color: ${colors.dark.border_highlight_color};
+            }
           }
         }
       `}</style>
