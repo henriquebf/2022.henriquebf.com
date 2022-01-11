@@ -4,6 +4,7 @@ import Goal from '@/models/Goal';
 import postOAuthToken from 'services/strava/postOAuthToken';
 import getAthlete from '@/services/strava/getAthlete';
 import getAthleteStats from '@/services/strava/getAthleteStats';
+import postPushSubscriptions from '@/services/strava/postPushSubscriptions';
 
 export default withSessionRoute(async (req, res) => {
   try {
@@ -36,6 +37,9 @@ export default withSessionRoute(async (req, res) => {
     // Save session
     req.session.athleteId = String(data.athlete.id);
     await req.session.save();
+
+    // Subscribe to push notifications (async)
+    postPushSubscriptions();
 
     res.redirect('/cms/data');
   } catch (err) {
