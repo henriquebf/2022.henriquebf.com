@@ -19,8 +19,10 @@
       "@/lib/*": ["lib/*"],
       "@/components/*": ["components/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/models/*": ["models/*"],
       "@/helpers/*": ["helpers/*"],
       "@/config/*": ["config/*"],
+      "@/services/*": ["services/*"],
       "@/types/*": ["types/*"]
     }
   },
@@ -28,7 +30,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "helpers/calendarHelper.test.js"
+    "helpers/calendarHelper.test.ts"
   ],
   "exclude": ["node_modules"]
 }
