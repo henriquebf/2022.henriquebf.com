@@ -1,16 +1,29 @@
-const monthNames: string[] = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Dec',
-];
+export enum MonthNames {
+  jan = 'Jan',
+  feb = 'Feb',
+  mar = 'Mar',
+  apr = 'Apr',
+  may = 'May',
+  jun = 'Jun',
+  jul = 'Jul',
+  aug = 'Aug',
+  sep = 'Sep',
+  oct = 'Oct',
+  dec = 'Dec',
+}
+
+export enum WeekNames {
+  mon = 'Mon',
+  tue = 'Tue',
+  wed = 'Wed',
+  thu = 'Thu',
+  fri = 'Fri',
+  sat = 'Sat',
+  sun = 'Sun',
+}
+
+const monthNames: string[] = Object.values(MonthNames);
+const weekNames: string[] = Object.values(WeekNames);
 
 type Month = {
   name: string;
@@ -27,6 +40,14 @@ export const getMonth = (
   const year = date.getFullYear();
 
   return { name, year };
+};
+
+export const getMonthDateNumber = (name: string): number => {
+  return monthNames.indexOf(name) + 1;
+};
+
+export const getWeekDay = (day: number): string => {
+  return weekNames[day];
 };
 
 export const getHours = (

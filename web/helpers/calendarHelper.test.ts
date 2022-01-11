@@ -1,6 +1,11 @@
-import { getMonth, getHours } from './calendarHelper';
+import {
+  getMonth,
+  getMonthDateNumber,
+  getWeekDay,
+  getHours,
+} from './calendarHelper';
 
-describe('getHours', () => {
+describe('getMonth', () => {
   const testDate = new Date(2022, 0, 9);
 
   it('Current test month should be January', () => {
@@ -21,6 +26,20 @@ describe('getHours', () => {
   it('20 months ahead should be 2023', () => {
     const { year } = getMonth(20, testDate);
     expect(year).toEqual(2023);
+  });
+});
+
+describe('getMonthDateNumber', () => {
+  it('get month date number', () => {
+    const monthNumber = getMonthDateNumber('Feb');
+    expect(monthNumber).toEqual(2);
+  });
+});
+
+describe('getWeekDay', () => {
+  it('get week day', () => {
+    const weekDay = getWeekDay(0);
+    expect(weekDay).toEqual('Mon');
   });
 });
 

@@ -1,20 +1,27 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Header from '@/components/sections/Header';
-import Intro from '@/components/sections/About';
-import Projects from '@/components/sections/Projects';
-import Timeline from '@/components/sections/Timeline';
-import Availability from '@/components/sections/Availability';
+import AboutSection from '@/components/sections/About';
+import ProjectsSection from '@/components/sections/Projects';
+import TimelineSection from '@/components/sections/Timeline';
+import AvailabilitySection from '@/components/sections/Availability';
 import Footer from '@/components/sections/Footer';
-import { SettingsAvailability } from '@/types/SettingsTypes';
-import { CyclingGoal } from '@/types/CyclingTypes';
+import Availability, { AvailabilityRecord } from '@/models/Availability';
+import Goal, { GoalRecord } from '@/models/Goal';
+
+type SettingsAvailability = string;
 
 type Props = {
+  goal: GoalRecord;
+  availabilities: AvailabilityRecord[];
   settingsAvailability: SettingsAvailability;
-  cyclingGoal: CyclingGoal;
 };
 
-const Home: NextPage<Props> = ({ settingsAvailability, cyclingGoal }) => {
+const Home: NextPage<Props> = ({
+  goal,
+  availabilities,
+  settingsAvailability,
+}) => {
   return (
     <>
       <Head>
@@ -26,10 +33,13 @@ const Home: NextPage<Props> = ({ settingsAvailability, cyclingGoal }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Intro />
-      <Projects cyclingGoal={cyclingGoal} />
-      <Timeline />
-      <Availability settingsAvailability={settingsAvailability} />
+      <AboutSection />
+      <ProjectsSection goal={goal} />
+      <TimelineSection />
+      <AvailabilitySection
+        availabilities={availabilities}
+        settingsAvailability={settingsAvailability}
+      />
       <Footer />
     </>
   );
@@ -38,16 +48,13 @@ const Home: NextPage<Props> = ({ settingsAvailability, cyclingGoal }) => {
 export const getServerSideProps: GetServerSideProps = async () => {
   const settingsAvailability: SettingsAvailability =
     process.env.SETTINGS_AVAILABILITY || '';
-  const cyclingGoal: CyclingGoal = {
-    total: process.env.CYCLING_YEARLY
-      ? parseInt(process.env.CYCLING_YEARLY)
-      : 10000,
-    complete: process.env.CYCLING_COMPLETE
-      ? parseInt(process.env.CYCLING_COMPLETE)
-      : 0,
-  };
 
-  return { props: { settingsAvailability, cyclingGoal } };
+  const goal = await Goal.findOne({
+    athleteId: Number(process.env.STRAVA_ADMIN_ID),
+  });
+  const availabilities = await Availability.find({});
+
+  return { props: { goal, availabilities, settingsAvailability } };
 };
 
 export default Home;
