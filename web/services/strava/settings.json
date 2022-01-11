@@ -1,0 +1,17 @@
+{
+  "test": {
+    "clientId": "76426",
+    "redirect_uri": "http://localhost:3000/api/login",
+    "scope": "profile:read_all,activity:read_all"
+  },
+  "development": {
+    "clientId": "76426",
+    "redirect_uri": "http://localhost:3000/api/login",
+    "scope": "profile:read_all,activity:read_all"
+  },
+  "production": {
+    "clientId": "76426",
+    "redirect_uri": "https://henriquebf.com/api/login",
+    "scope": "profile:read_all,activity:read_all"
+  }
+}
