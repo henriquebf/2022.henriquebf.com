@@ -31,17 +31,17 @@ export const getServerSideProps = withSessionSsr(async function ({
 }): Promise<{ props: any }> {
   const athleteId = req.session.athleteId;
   if (athleteId === process.env.STRAVA_ADMIN_ID) {
+    const goal = await Goal.findOne({ athleteId: Number(athleteId) });
+    const availabilities = await Availability.find({});
+
     res.setHeader('location', '/cms/data');
     res.statusCode = 302;
     res.end();
-    return { props: { athleteId } };
+    return { props: { goal, availabilities } };
   }
 
-  const goal = await Goal.findOne({ athleteId: Number(athleteId) });
-  const availabilities = await Availability.find({});
-
   return {
-    props: { goal, availabilities },
+    props: {},
   };
 });
 
