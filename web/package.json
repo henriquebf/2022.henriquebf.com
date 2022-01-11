@@ -9,15 +9,20 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "iron-session": "^6.0.5",
+    "mongodb": "^4.3.0",
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@types/node": "16.11.10",
     "@types/react": "17.0.36",
+    "@types/uuid": "^8.3.4",
     "babel-jest": "^27.4.6",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.4",
