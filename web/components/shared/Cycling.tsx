@@ -2,28 +2,26 @@ import type { NextPage } from 'next';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import { getSchedule } from '@/helpers/cyclingHelper';
-import { CyclingGoal } from '@/types/CyclingTypes';
+import { GoalRecord } from '@/models/Goal';
 
 type Props = {
-  cyclingGoal: CyclingGoal;
+  goal: GoalRecord;
 };
 
-const Cycling: NextPage<Props> = ({ cyclingGoal }) => {
-  const { total, complete } = cyclingGoal;
-  const progress = Math.ceil(complete * 100) / total;
-  const schedule = getSchedule(total, complete);
+const Cycling: NextPage<Props> = ({ goal }) => {
+  const { total, distance } = goal;
+  const progress = (Math.ceil(distance * 100) / total).toFixed(1);
+  const schedule = getSchedule(total, distance);
   const currentYear = new Date().getFullYear();
-
-  console.log('progress', progress);
 
   return (
     <div className="project-item">
       <h4>Cycling Goal for {currentYear}</h4>
       <p>
-        I have completed <b>{complete} km</b> of my <b>{total} km</b> yearly
-        goal. This represents a progress of <b>{progress}%</b> which is{' '}
-        <b>{Math.abs(schedule)} km</b> {schedule > 0 ? 'ahead of' : 'behing'}{' '}
-        schedule.
+        I have completed <b>{Math.ceil(distance / 1000)} km</b> of my{' '}
+        <b>{Math.ceil(total / 1000)} km</b> yearly goal. This is a progress of{' '}
+        <b>{progress}%</b> or <b>{Math.abs(Math.ceil(schedule / 1000))} km</b>{' '}
+        {schedule > 0 ? 'ahead of' : 'behing'} schedule.
       </p>
       <div className="progress-bar"></div>
       <style jsx>{`

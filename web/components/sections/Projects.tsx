@@ -5,7 +5,7 @@ import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import ProjectItem from '@/components/shared/ProjectItem';
 import Cycling from '@/components/shared/Cycling';
-import { CyclingGoal } from '@/types/CyclingTypes';
+import { GoalRecord } from '@/models/Goal';
 
 const projects = [
   {
@@ -33,10 +33,10 @@ const projects = [
 ];
 
 type Props = {
-  cyclingGoal: CyclingGoal;
+  goal: GoalRecord;
 };
 
-const Projects: NextPage<Props> = ({ cyclingGoal }) => {
+const Projects: NextPage<Props> = ({ goal }) => {
   return (
     <section id="projects">
       <Container>
@@ -49,7 +49,7 @@ const Projects: NextPage<Props> = ({ cyclingGoal }) => {
               ))}
             </div>
             <div className="goals">
-              <Cycling cyclingGoal={cyclingGoal} />
+              <Cycling goal={goal} />
             </div>
           </div>
         </div>

@@ -4,12 +4,17 @@ import colors from '@/config/colors.json';
 import Container from '@/components/layout/Container';
 import Month from '@/components/shared/Month';
 import { getMonth } from '@/helpers/calendarHelper';
+import { AvailabilityRecord } from '@/models/Availability';
 
 type Props = {
+  availabilities: AvailabilityRecord[];
   settingsAvailability: string;
 };
 
-const Availability: NextPage<Props> = ({ settingsAvailability }) => {
+const Availability: NextPage<Props> = ({
+  availabilities,
+  settingsAvailability,
+}) => {
   const months = [0, 1, 2, 3, 4, 5].map((n) => getMonth(n));
 
   return (
@@ -21,6 +26,7 @@ const Availability: NextPage<Props> = ({ settingsAvailability }) => {
             {months.map(({ name, year }) => (
               <Month
                 key={name}
+                availabilities={availabilities}
                 settingsAvailability={settingsAvailability}
                 name={name}
                 year={year}

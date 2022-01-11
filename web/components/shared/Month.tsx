@@ -3,10 +3,12 @@ import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import { getHours } from '@/helpers/calendarHelper';
 import { classNames } from '@/helpers/classnameHelper';
+import { AvailabilityRecord } from '@/models/Availability';
 
 type Props = {
   name: string;
   year: number;
+  availabilities: AvailabilityRecord[];
   settingsAvailability: string;
 };
 
