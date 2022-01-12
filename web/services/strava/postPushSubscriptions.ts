@@ -6,7 +6,6 @@ export const verifyToken = 'fZOC25d2zR73mFRiYEmB';
 const postPushSubscriptions = async (): Promise<void> => {
   try {
     const envStravaSettings = stravaSettings[process.env.NODE_ENV];
-    console.log('envStravaSettings', envStravaSettings);
     await axios.post(`https://www.strava.com/api/v3/push_subscriptions`, {
       params: {
         client_id: envStravaSettings.clientId,
