@@ -75,11 +75,12 @@ const adjustTimezoneOffset = (targetDate: Date): Date => {
 export const getHours = (
   month: string,
   year: number,
-  availabilities: AvailabilityRecord[] // Only used by testing suite
+  availabilities: AvailabilityRecord[],
+  inputNow?: Date // Only used by testing suite
 ): number => {
   const monthNumber = getMonthDateNumber(month);
 
-  const now = new Date();
+  const now = inputNow || new Date();
   const nowDate = new Date(
     now.getFullYear(),
     now.getMonth(),

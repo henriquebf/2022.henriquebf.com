@@ -45,6 +45,8 @@ describe('getWeekDay', () => {
 });
 
 describe('getHours', () => {
+  const now = new Date(2022, 0, 1, 11, 58, 33);
+
   const availabilities: AvailabilityRecord[] = [
     { id: 'xxx', month: 'Jan', year: 2022, unavailableDays: 'all' },
     {
@@ -56,17 +58,17 @@ describe('getHours', () => {
   ];
 
   it('January should be unavailable', () => {
-    const hours = getHours('Jan', 2022, availabilities);
+    const hours = getHours('Jan', 2022, availabilities, now);
     expect(hours).toEqual(0);
   });
 
   it('April should have 40 hours', () => {
-    const hours = getHours('Apr', 2022, availabilities);
+    const hours = getHours('Apr', 2022, availabilities, now);
     expect(hours).toEqual(40);
   });
 
   it('A not defined month should return all working days', () => {
-    const hours = getHours('May', 2022, availabilities);
+    const hours = getHours('May', 2022, availabilities, now);
     expect(hours).toEqual(144);
   });
 });
