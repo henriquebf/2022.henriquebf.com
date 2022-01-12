@@ -9,11 +9,10 @@ type Props = {
   name: string;
   year: number;
   availabilities: AvailabilityRecord[];
-  settingsAvailability: string;
 };
 
-const Month: NextPage<Props> = ({ name, year, settingsAvailability }) => {
-  const hours = getHours(name, year, settingsAvailability);
+const Month: NextPage<Props> = ({ name, year, availabilities }) => {
+  const hours = getHours(name, year, availabilities);
 
   return (
     <div className="month">

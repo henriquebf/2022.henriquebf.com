@@ -8,13 +8,9 @@ import { AvailabilityRecord } from '@/models/Availability';
 
 type Props = {
   availabilities: AvailabilityRecord[];
-  settingsAvailability: string;
 };
 
-const Availability: NextPage<Props> = ({
-  availabilities,
-  settingsAvailability,
-}) => {
+const Availability: NextPage<Props> = ({ availabilities }) => {
   const months = [0, 1, 2, 3, 4, 5].map((n) => getMonth(n));
 
   return (
@@ -27,7 +23,6 @@ const Availability: NextPage<Props> = ({
               <Month
                 key={name}
                 availabilities={availabilities}
-                settingsAvailability={settingsAvailability}
                 name={name}
                 year={year}
               />
