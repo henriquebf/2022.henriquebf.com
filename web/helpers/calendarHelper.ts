@@ -80,6 +80,7 @@ export const getHours = (
 ): number => {
   const monthNumber = getMonthDateNumber(month);
 
+  // Set referents to iterate month
   const now = inputNow || new Date();
   const nowDate = new Date(
     now.getFullYear(),
@@ -92,29 +93,23 @@ export const getHours = (
   const monthStartDate = new Date(year, monthNumber, 2, 0, 0, 0);
   const monthEndDate = new Date(year, monthNumber + 1, 1, 0, 0, 0);
 
+  // Check availability definitions
   const availability = availabilities.find(
     (a) => a.month === month && a.year === year
   );
-
   const unavailableDays = (
     availability?.unavailableDays ? availability.unavailableDays : ''
   ).split(',');
 
-  let hours = 0;
-
+  // Adjust timezone offset
   const startDate = adjustTimezoneOffset(
     nowDate.getTime() > monthStartDate.getTime() ? nowDate : monthStartDate
   );
   const endDate = adjustTimezoneOffset(monthEndDate);
 
+  // Calculate hours
+  let hours = 0;
   for (const d = startDate; d <= endDate; d.setUTCDate(d.getUTCDate() + 1)) {
-    // console.log(
-    //   month,
-    //   // `startDate:${startDate} endDate:${endDate}`,
-    //   `date:${d.getUTCDate()}`,
-    //   `day:${d.getUTCDay()}`,
-    //   `week-day:${getWeekDay(d.getUTCDay())}`
-    // );
     if (
       !unavailableDays.includes('all') &&
       !unavailableDays.includes(String(d.getUTCDate())) &&
