@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import Container from '@/components/layout/Container';
 import { withSessionSsr } from '@/lib/session';
 import Availability, { AvailabilityRecord } from '@/models/Availability';
 import Goal, { GoalRecord } from '@/models/Goal';
@@ -7,27 +9,51 @@ import Goal, { GoalRecord } from '@/models/Goal';
 type Props = { goal: GoalRecord; availabilities: AvailabilityRecord[] };
 
 const AdminSettings: NextPage<Props> = ({ goal, availabilities }) => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div>
       <Head>
-        <title>Admin - Settings</title>
+        <title>CMS - Settings</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1>Settings</h1>
-        <h2>Goal</h2>
-        <div>Total: {goal.total}</div>
-        <div>Distance: {goal.distance}</div>
-        <h2>Availability</h2>
-        <ul>
-          {availabilities.map((a) => (
-            <ul>{a.id}</ul>
-          ))}
-        </ul>
-        <footer>
-          <a href={`/api/logout`}>logout</a>
-        </footer>
+        <Container>
+          <h1>Settings</h1>
+          <h2>Goal in {currentYear}</h2>
+          <table>
+            <tr>
+              <td>
+                <b>Total:</b>
+              </td>
+              <td>{goal.total} m</td>
+            </tr>
+            <tr>
+              <td>
+                <b>Distance:</b>
+              </td>
+              <td>{goal.distance} m</td>
+            </tr>
+          </table>
+          <h2>Availability</h2>
+          <table>
+            {availabilities.map((a) => (
+              <tr>
+                <td>
+                  <b>
+                    {a.year}.{a.month}
+                  </b>
+                </td>
+                <td>{a.unavailableDays}</td>
+              </tr>
+            ))}
+          </table>
+          <h3>Actions</h3>
+          <footer>
+            <Link href={`/api/logout`}>logout</Link>
+          </footer>
+        </Container>
       </main>
     </div>
   );
@@ -42,6 +68,7 @@ export const getServerSideProps = withSessionSsr(async function ({
     res.setHeader('location', '/cms');
     res.statusCode = 302;
     res.end();
+
     return { props: {} };
   }
 

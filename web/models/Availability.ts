@@ -1,10 +1,5 @@
 import * as uuid from 'uuid';
 import { find, findOne, updateMany, deleteMany } from '@/lib/db';
-import {
-  WeekNames,
-  getMonthDateNumber,
-  getWeekDay,
-} from '@/helpers/calendarHelper';
 
 export interface AvailabilityRecord {
   id: string;

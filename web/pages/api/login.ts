@@ -42,10 +42,13 @@ export default withSessionRoute(async (req, res) => {
     // Subscribe to push notifications (async)
     const subscriptions = await getPushSubscriptions();
     if (!subscriptions?.length) {
-      postPushSubscriptions();
+      const response = await postPushSubscriptions();
+      if (!response) {
+        console.error('push: could not subscribe!');
+      }
     }
 
-    res.redirect('/cms/data');
+    res.redirect('/cms/edit');
   } catch (err) {
     console.error(err);
     req.session.destroy();
