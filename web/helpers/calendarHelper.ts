@@ -1,3 +1,5 @@
+import { AvailabilityRecord } from '@/models/Availability';
+
 export enum MonthNames {
   jan = 'Jan',
   feb = 'Feb',
@@ -13,13 +15,13 @@ export enum MonthNames {
 }
 
 export enum WeekNames {
+  sun = 'Sun',
   mon = 'Mon',
   tue = 'Tue',
   wed = 'Wed',
   thu = 'Thu',
   fri = 'Fri',
   sat = 'Sat',
-  sun = 'Sun',
 }
 
 const monthNames: string[] = Object.values(MonthNames);
@@ -43,28 +45,78 @@ export const getMonth = (
 };
 
 export const getMonthDateNumber = (name: string): number => {
-  return monthNames.indexOf(name) + 1;
+  return monthNames.indexOf(name);
 };
 
 export const getWeekDay = (day: number): string => {
   return weekNames[day];
 };
 
+const workingHoursPerDay: number = 8;
+const weekWorkingDays: string[] = [
+  WeekNames.mon,
+  WeekNames.tue,
+  WeekNames.wed,
+  WeekNames.thu,
+];
+
+const adjustTimezoneOffset = (targetDate: Date): Date => {
+  var offset = targetDate.getTimezoneOffset();
+  var Y = targetDate.getUTCFullYear();
+  var M = targetDate.getUTCMonth();
+  var D = targetDate.getUTCDate();
+  var h = targetDate.getUTCHours();
+  var m = targetDate.getUTCMinutes();
+  var s = targetDate.getUTCSeconds();
+
+  return new Date(Date.UTC(Y, M, D, h, m + offset, s));
+};
+
 export const getHours = (
-  name: string,
+  month: string,
   year: number,
-  settings?: string // 'Jan:64,Mar:100' -> monthName:hours
-) => {
-  let hours = 128;
+  availabilities: AvailabilityRecord[],
+  inputNow?: Date // Only used by testing suite
+): number => {
+  const monthNumber = getMonthDateNumber(month);
 
-  if (settings) {
-    const setHour = settings
-      .split(',')
-      .filter((monthSetting) => monthSetting.startsWith(`${year}:${name}`))
-      .map((monthSetting) => parseInt(monthSetting.split(':')[2]))
-      .find((hour) => hour >= 0);
+  // Set referents to iterate month
+  const now = inputNow || new Date();
+  const nowDate = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate() + 2,
+    0,
+    0,
+    0
+  );
+  const monthStartDate = new Date(year, monthNumber, 2, 0, 0, 0);
+  const monthEndDate = new Date(year, monthNumber + 1, 1, 0, 0, 0);
 
-    if (setHour !== undefined && setHour >= 0) return setHour;
+  // Check availability definitions
+  const availability = availabilities.find(
+    (a) => a.month === month && a.year === year
+  );
+  const unavailableDays = (
+    availability?.unavailableDays ? availability.unavailableDays : ''
+  ).split(',');
+
+  // Adjust timezone offset
+  const startDate = adjustTimezoneOffset(
+    nowDate.getTime() > monthStartDate.getTime() ? nowDate : monthStartDate
+  );
+  const endDate = adjustTimezoneOffset(monthEndDate);
+
+  // Calculate hours
+  let hours = 0;
+  for (const d = startDate; d <= endDate; d.setUTCDate(d.getUTCDate() + 1)) {
+    if (
+      !unavailableDays.includes('all') &&
+      !unavailableDays.includes(String(d.getUTCDate())) &&
+      weekWorkingDays.includes(getWeekDay(d.getUTCDay()))
+    ) {
+      hours += workingHoursPerDay;
+    }
   }
 
   return hours;

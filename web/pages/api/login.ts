@@ -5,6 +5,7 @@ import postOAuthToken from 'services/strava/postOAuthToken';
 import getAthlete from '@/services/strava/getAthlete';
 import getAthleteStats from '@/services/strava/getAthleteStats';
 import postPushSubscriptions from '@/services/strava/postPushSubscriptions';
+import getPushSubscriptions from '@/services/strava/getPushSubscriptions';
 
 export default withSessionRoute(async (req, res) => {
   try {
@@ -39,9 +40,15 @@ export default withSessionRoute(async (req, res) => {
     await req.session.save();
 
     // Subscribe to push notifications (async)
-    postPushSubscriptions();
+    const subscriptions = await getPushSubscriptions();
+    if (!subscriptions?.length) {
+      const response = await postPushSubscriptions();
+      if (!response) {
+        console.error('push: could not subscribe!');
+      }
+    }
 
-    res.redirect('/cms/data');
+    res.redirect('/cms/edit');
   } catch (err) {
     console.error(err);
     req.session.destroy();

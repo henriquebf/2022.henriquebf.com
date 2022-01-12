@@ -14,14 +14,9 @@ type SettingsAvailability = string;
 type Props = {
   goal: GoalRecord;
   availabilities: AvailabilityRecord[];
-  settingsAvailability: SettingsAvailability;
 };
 
-const Home: NextPage<Props> = ({
-  goal,
-  availabilities,
-  settingsAvailability,
-}) => {
+const Home: NextPage<Props> = ({ goal, availabilities }) => {
   return (
     <>
       <Head>
@@ -36,25 +31,19 @@ const Home: NextPage<Props> = ({
       <AboutSection />
       <ProjectsSection goal={goal} />
       <TimelineSection />
-      <AvailabilitySection
-        availabilities={availabilities}
-        settingsAvailability={settingsAvailability}
-      />
+      <AvailabilitySection availabilities={availabilities} />
       <Footer />
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const settingsAvailability: SettingsAvailability =
-    process.env.SETTINGS_AVAILABILITY || '';
-
   const goal = await Goal.findOne({
     athleteId: Number(process.env.STRAVA_ADMIN_ID),
   });
   const availabilities = await Availability.find({});
 
-  return { props: { goal, availabilities, settingsAvailability } };
+  return { props: { goal, availabilities } };
 };
 
 export default Home;

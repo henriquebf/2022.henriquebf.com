@@ -4,6 +4,7 @@ import {
   getWeekDay,
   getHours,
 } from './calendarHelper';
+import { AvailabilityRecord } from '@/models/Availability';
 
 describe('getMonth', () => {
   const testDate = new Date(2022, 0, 9);
@@ -32,37 +33,42 @@ describe('getMonth', () => {
 describe('getMonthDateNumber', () => {
   it('get month date number', () => {
     const monthNumber = getMonthDateNumber('Feb');
-    expect(monthNumber).toEqual(2);
+    expect(monthNumber).toEqual(1);
   });
 });
 
 describe('getWeekDay', () => {
   it('get week day', () => {
     const weekDay = getWeekDay(0);
-    expect(weekDay).toEqual('Mon');
+    expect(weekDay).toEqual('Sun');
   });
 });
 
 describe('getHours', () => {
-  const settings = '2022:Jan:0,2022:Feb:0,2022:Mar:0,2022:Apr:32,2022:May:72';
+  const now = new Date(2022, 0, 1, 11, 58, 33);
+
+  const availabilities: AvailabilityRecord[] = [
+    { id: 'xxx', month: 'Jan', year: 2022, unavailableDays: 'all' },
+    {
+      id: 'zzz',
+      month: 'Apr',
+      year: 2022,
+      unavailableDays: '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20',
+    },
+  ];
 
   it('January should be unavailable', () => {
-    const hours = getHours('Jan', 2022, settings);
+    const hours = getHours('Jan', 2022, availabilities, now);
     expect(hours).toEqual(0);
   });
 
-  it('April should have 32 hours', () => {
-    const hours = getHours('Apr', 2022, settings);
-    expect(hours).toEqual(32);
+  it('April should have 40 hours', () => {
+    const hours = getHours('Apr', 2022, availabilities, now);
+    expect(hours).toEqual(40);
   });
 
-  it('A not defined month should return 128', () => {
-    const hours = getHours('Jul', 2023, settings);
-    expect(hours).toEqual(128);
-  });
-
-  it('Settings not defined month should return 128', () => {
-    const hours = getHours('Mar', 2022);
-    expect(hours).toEqual(128);
+  it('A not defined month should return all working days', () => {
+    const hours = getHours('May', 2022, availabilities, now);
+    expect(hours).toEqual(144);
   });
 });

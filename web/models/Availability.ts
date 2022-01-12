@@ -1,14 +1,8 @@
 import * as uuid from 'uuid';
 import { find, findOne, updateMany, deleteMany } from '@/lib/db';
-import {
-  WeekNames,
-  getMonthDateNumber,
-  getWeekDay,
-} from '@/helpers/calendarHelper';
 
 export interface AvailabilityRecord {
   id: string;
-  userEmail: string;
   month: string;
   year: number;
   unavailableDays: string; // '12,13,14' | 'all'
@@ -16,45 +10,6 @@ export interface AvailabilityRecord {
 
 class Availability {
   _collection: string = 'availabilities';
-
-  // Definitions
-  _weekWorkingDays: string[] = [
-    WeekNames.mon,
-    WeekNames.tue,
-    WeekNames.wed,
-    WeekNames.thu,
-  ];
-  _workingHoursPerDay: number = 8;
-
-  // Calculations
-  async calculateAvailableHoursByMonth(
-    month: string,
-    year: number,
-    inputAvailability?: AvailabilityRecord // Only used by testing suite
-  ): Promise<number> {
-    const monthNumber = getMonthDateNumber(month);
-    const startDate = new Date(year, monthNumber, 1);
-    const endDate = new Date(year, monthNumber + 1, 0);
-
-    const availability =
-      inputAvailability || (await this.findOne({ month, year }));
-    const unavailableDays = (
-      availability?.unavailableDays ? availability.unavailableDays : ''
-    ).split(',');
-
-    let hours = 0;
-    for (const d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
-      if (
-        !unavailableDays.includes('all') &&
-        !unavailableDays.includes(String(d.getDate)) &&
-        !this._weekWorkingDays.includes(getWeekDay(d.getDay()))
-      ) {
-        hours += this._workingHoursPerDay;
-      }
-    }
-
-    return hours;
-  }
 
   // DB Transactions
   async find(
