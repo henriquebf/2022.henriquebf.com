@@ -9,23 +9,25 @@ import Footer from '@/components/sections/Footer';
 import Availability, { AvailabilityRecord } from '@/models/Availability';
 import Goal, { GoalRecord } from '@/models/Goal';
 
-type SettingsAvailability = string;
-
 type Props = {
   goal: GoalRecord;
   availabilities: AvailabilityRecord[];
 };
 
 const Home: NextPage<Props> = ({ goal, availabilities }) => {
+  const title = 'Henrique Ferreira - Fullstack Developer';
+  const description =
+    'About me, Projects & Interest, Career Timeline and Availability';
+
   return (
     <>
       <Head>
-        <title>Henrique Ferreira - Fullstack Developer & Founder</title>
-        <meta
-          name="description"
-          content="Summary of Experience, Side Projects & Personal Interests"
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="/meta-opengraph.jpg" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
       <Header />
       <AboutSection />
