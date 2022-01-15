@@ -9,8 +9,6 @@ import Footer from '@/components/sections/Footer';
 import Availability, { AvailabilityRecord } from '@/models/Availability';
 import Goal, { GoalRecord } from '@/models/Goal';
 
-type SettingsAvailability = string;
-
 type Props = {
   goal: GoalRecord;
   availabilities: AvailabilityRecord[];
@@ -20,11 +18,16 @@ const Home: NextPage<Props> = ({ goal, availabilities }) => {
   return (
     <>
       <Head>
-        <title>Henrique Ferreira - Fullstack Developer & Founder</title>
+        <title>Henrique Ferreira - Fullstack Developer</title>
         <meta
           name="description"
-          content="Summary of Experience, Side Projects & Personal Interests"
+          content="Summary of Experience, Personal Projects and Interests"
         />
+        <meta
+          property="og:title"
+          content="Henrique Ferreira - Fullstack Developer"
+        />
+        <meta property="og:image" content="/meta-opengraph.jpg" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
