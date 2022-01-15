@@ -15,20 +15,19 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ goal, availabilities }) => {
+  const title = 'Henrique Ferreira - Fullstack Developer';
+  const description =
+    'About me, Projects & Interest, Career Timeline and Availability';
+
   return (
     <>
       <Head>
-        <title>Henrique Ferreira - Fullstack Developer</title>
-        <meta
-          name="description"
-          content="Summary of Experience, Personal Projects and Interests"
-        />
-        <meta
-          property="og:title"
-          content="Henrique Ferreira - Fullstack Developer"
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content="/meta-opengraph.jpg" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header />
       <AboutSection />
