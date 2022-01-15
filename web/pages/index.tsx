@@ -15,9 +15,8 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ goal, availabilities }) => {
-  const title = 'Henrique Ferreira - Fullstack Developer';
-  const description =
-    'About me, Projects & Interest, Career Timeline and Availability';
+  const title = 'Henrique Ferreira';
+  const description = 'A Road Cycling enthusiast and Fullstack Developer.';
 
   return (
     <>
