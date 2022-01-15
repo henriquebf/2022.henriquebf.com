@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({ goal, availabilities }) => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="/meta-opengraph.jpg" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
       <Header />
       <AboutSection />
