@@ -17,6 +17,8 @@ type Props = {
 const Home: NextPage<Props> = ({ goal, availabilities }) => {
   const title = 'Henrique Ferreira';
   const description = 'A Road Cycling enthusiast and Fullstack Developer.';
+  const image = 'https://henriquebf.com/meta-opengraph.jpg';
+  const icon = 'https://henriquebf.com/favicon.png';
 
   return (
     <>
@@ -25,12 +27,12 @@ const Home: NextPage<Props> = ({ goal, availabilities }) => {
         <meta name="description" content={description} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content="/meta-opengraph.jpg" />
+        <meta property="twitter:image" content={image} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="/meta-opengraph.jpg" />
+        <meta property="og:image" content={image} />
         <meta property="og:type" content="website" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href={icon} />
       </Head>
       <Header />
       <AboutSection />
