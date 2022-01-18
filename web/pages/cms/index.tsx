@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import ConnectWithStrava from '@/components/buttons/ConnectWithStrava';
 
@@ -17,6 +18,9 @@ const AdminIndex: NextPage = () => {
           <div>
             <ConnectWithStrava />
           </div>
+          <footer>
+            <Link href={`/`}>home</Link>
+          </footer>
         </Container>
       </main>
     </div>
