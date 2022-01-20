@@ -15,16 +15,17 @@ const Footer: NextPage = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(emailAddress);
+    if (hasCopied) return;
     // show fading "copied" message
     setCopied(true);
     setTimeout(() => {
       setFading(true);
-    }, 2000);
+    }, 1000);
     // reset
     setTimeout(() => {
       setCopied(false);
       setFading(false);
-    }, 5000);
+    }, 2000);
   };
 
   return (
@@ -101,7 +102,7 @@ const Footer: NextPage = () => {
             margin-left: 10px;
             color: ${colors.light.text_secondary_color};
             opacity: 1;
-            transition: opacity 3s;
+            transition: opacity 1s;
           }
 
           .fading {
