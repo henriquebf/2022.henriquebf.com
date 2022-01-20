@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import zIndexes from '@/config/zIndexes.json';
-import { classNames } from '@/helpers/classnameHelper';
+import { classNames } from '@/helpers/utilsHelper';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import Container from '@/components/layout/Container';
 import SocialIcons from '@/components/shared/SocialIcons';

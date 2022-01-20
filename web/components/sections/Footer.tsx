@@ -6,26 +6,25 @@ import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import SocialIcons from '@/components/shared/SocialIcons';
 import IconCopyClipboard from '@/components/svg/IconCopyClipboard';
-import { classNames } from '@/helpers/classnameHelper';
+import { classNames, sleep } from '@/helpers/utilsHelper';
 
 const Footer: NextPage = () => {
   const emailAddress = 'contact@henriquebf.com';
   const [hasCopied, setCopied] = useState(false);
   const [isFading, setFading] = useState(false);
 
-  const copyToClipboard = () => {
+  const copyToClipboard = async () => {
     navigator.clipboard.writeText(emailAddress);
     if (hasCopied) return;
-    // show fading "copied" message
+    // show "copied" message
     setCopied(true);
-    setTimeout(() => {
-      setFading(true);
-    }, 1000);
+    // fade "copied message"
+    await sleep(1000);
+    setFading(true);
     // reset
-    setTimeout(() => {
-      setCopied(false);
-      setFading(false);
-    }, 2000);
+    await sleep(1000);
+    setCopied(false);
+    setFading(false);
   };
 
   return (

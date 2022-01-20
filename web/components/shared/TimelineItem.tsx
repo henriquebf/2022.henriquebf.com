@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
-import { classNames } from '@/helpers/classnameHelper';
+import { classNames } from '@/helpers/utilsHelper';
 
 type Link = {
   text: string;

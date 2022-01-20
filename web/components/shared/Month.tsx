@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import { getHours } from '@/helpers/calendarHelper';
-import { classNames } from '@/helpers/classnameHelper';
+import { classNames } from '@/helpers/utilsHelper';
 import { AvailabilityRecord } from '@/models/Availability';
 
 type Props = {

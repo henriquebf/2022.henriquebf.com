@@ -1,4 +1,4 @@
-import { classNames } from './classnameHelper';
+import { classNames } from './utilsHelper';
 
 describe('classNames', () => {
   it('Single classname', () => {
