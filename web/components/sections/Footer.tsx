@@ -1,17 +1,48 @@
 import type { NextPage } from 'next';
+import { useState } from 'react';
 import zIndexes from '@/config/zIndexes.json';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
 import SocialIcons from '@/components/shared/SocialIcons';
+import IconCopyClipboard from '@/components/svg/IconCopyClipboard';
+import { classNames } from '@/helpers/classnameHelper';
 
 const Footer: NextPage = () => {
+  const emailAddress = 'contact@henriquebf.com';
+  const [hasCopied, setCopied] = useState(false);
+  const [isFading, setFading] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(emailAddress);
+    // show fading "copied" message
+    setCopied(true);
+    setTimeout(() => {
+      setFading(true);
+    }, 2000);
+    // reset
+    setTimeout(() => {
+      setCopied(false);
+      setFading(false);
+    }, 5000);
+  };
+
   return (
     <section id="footer">
       <Container>
         <div className="wrapper">
           <div className="email">
-            <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>
+            <a href={`mailto:${emailAddress}`}>{emailAddress}</a>
+            <div className="icon" onClick={copyToClipboard}>
+              <IconCopyClipboard size="20px" />
+            </div>
+            {hasCopied && (
+              <span
+                className={classNames(['copied', isFading ? 'fading' : ''])}
+              >
+                saved in clipboard
+              </span>
+            )}
           </div>
           <div>
             <div className="social">
@@ -53,6 +84,34 @@ const Footer: NextPage = () => {
 
           .email {
             display: block;
+            height: 30px;
+          }
+
+          .icon {
+            display: inline-block;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            margin-top: -4px;
+            margin-left: 10px;
+            vertical-align: middle;
+          }
+
+          .copied {
+            margin-left: 10px;
+            color: ${colors.light.text_secondary_color};
+            opacity: 1;
+            transition: opacity 3s;
+          }
+
+          .fading {
+            opacity: 0;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            .copied {
+              color: ${colors.dark.text_secondary_color};
+            }
           }
         }
       `}</style>
