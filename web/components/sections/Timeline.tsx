@@ -58,7 +58,8 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Fullstack Developer`,
     description: [
-      `After my previous employer's business shut down, I’ve done some solo work as a freelancer for clients in Brazil and Germany.`,
+      `After my previous employer's business shut down, I’ve worked as freelancer mostly for clients in Brazil. I also took the opportunity during this period to learn React as an earlier adopter.`,
+      `I have worked on the implementation of a MVP for an education multiplayer board game and the website front-end for Sabin, a holding company of one of largest laboratories in Brazil.`,
     ],
     highlights: [
       `Apice (MVP/educational game)`,
@@ -75,6 +76,7 @@ const timelineItems = [
     position: `Backend Developer`,
     description: [
       `Worked as backend developer and actively assisting the frontend functionalities for a small creative studio based in Berlin, building apps, campaigns and websites.`,
+      `Some of the clients I have been involved were Nokia, the danish clothing brand Joha and the insurance companies ASE and Danica Pension. I have also implemented the MVP of Bacon de Czar's own web application.`,
     ],
     highlights: [
       `Joha (website)`,
@@ -93,6 +95,7 @@ const timelineItems = [
     position: `Fullstack Developer`,
     description: [
       `Being the first hire of the company, I have pushed my skills to new standards, taking a lot of ownership and doing front- and backend for important projects.`,
+      `The main highlights were the implementation of two e-commerces: One for the swiss shoe brand On and a bespoke platform for the britsh company Surface View.`,
     ],
     highlights: [
       `On-Running (e-commerce)`,
@@ -109,7 +112,7 @@ const timelineItems = [
     location: `London, United Kingdom`,
     position: `Fullstack Developer`,
     description: [
-      `I have collaborated with a friend’s project by implementing his MVP, with the main benefit of buidling a showcase to potential new hires.`,
+      `I have collaborated on a friend’s project by implementing a marketplace platform for mining sites and equipments, as an opportunity to showcase my work for new hires in United Kingdom.`,
     ],
     highlights: [`Mineral trade (MVP/web app)`],
     bullets: [`PHP`, `Zend`, `MySQL`],
@@ -148,7 +151,7 @@ const timelineItems = [
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: [
-      `In my first internship, I assisted other developers in some tasks, mainly related to Linux and network.`,
+      `In my first internship, I assisted other engineers in some tasks, mainly related to a lightweight Linux distribution for Terminals and network setup for a cisco router.`,
     ],
     bullets: [`Linux`],
   },
@@ -159,7 +162,7 @@ const timelineItems = [
     location: `Belo Horizonte, Brazil`,
     position: `Bachelor - Control and Automation Engineer`,
     description: [
-      `It is fair to say that the logic I was ever most proud of, was the one designed by my graduation thesis. It was an out-of-the-box and simplified implementation of the trajectory generation for a robot of type SCARA. It was visually simulated in a 3D robot plugin for Matlab.`,
+      `In my graduation thesis I have developed an out-of-the-box implementation of the trajectory generation for a robot of type SCARA. It was visually simulated in a 3D robot plugin for Matlab.`,
     ],
     bullets: [`CIM`, `C++`, `Assembly`, `Eletronics`, `Robotics`, `PID`],
   },
