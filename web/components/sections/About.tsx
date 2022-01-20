@@ -38,8 +38,8 @@ const About: NextPage = () => {
                 specialist on React based frameworks.
               </h3>
               <h3>
-                20+ years experience building e-commerces and applications for
-                Web, Desktop, Mobile or anything you can write a line of code.
+                20+ years experience building e-commerce and applications for
+                Web, Desktop, Mobile or anything you can write code for.
               </h3>
               <div className="social-icons">
                 <SocialIcons />

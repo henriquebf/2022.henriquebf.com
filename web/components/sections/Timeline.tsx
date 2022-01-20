@@ -13,8 +13,8 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Co-founder & CTO`,
     description: [
-      `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the application from MVP to production state and leading a small team of developers.`,
-      `Beyound the technical duties, there was a lot of learning for managing a multi-national business setup, its accounting, investment contracts, payroll and last but not least, the liquidation of the business.`,
+      `Development of an Email client for OSX and mobile using Typescript (mostly). Improving the application from MVP state to production and leading a small team of remote developers.`,
+      `Beyond the technical duties, there was a lot of learning for managing a multi-national business setup, its accounting, investment contracts, payroll and last but not least, the business liquidation.`,
     ],
     bullets: ['Typescript', 'React + Redux', 'Electron', 'React Native'],
     thumb: 'timeline-thumb-tempo.svg',
@@ -31,7 +31,7 @@ const timelineItems = [
     position: `Co-founder & Fullstack Developer`,
     description: [
       `Co-founded a creative development studio with Onno Schwanen and implemented applications, websites and small e-commerce solutions - aiming to deliver the best possible user experience.`,
-      `Our portfolio includes projects for Google, Zalando, Hyper Island, MVPs for startups and consultancy work for agencies in Europe and United States of America.`,
+      `Our portfolio includes projects for Google, Zalando, Hyper Island, several MVPs for startups and consultancy work for agencies in Europe and North America.`,
     ],
     highlights: [
       `Tempo (MVP/desktop application)`,
@@ -58,7 +58,7 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Fullstack Developer`,
     description: [
-      `After my previous employer's business shut down, I’ve worked as freelancer mostly for clients in Brazil. I also took the opportunity during this period to learn React as an earlier adopter.`,
+      `I was hired as a freelancer for a brazilian based agency. I also took the opportunity during this period to learn React and become an earlier adopter for future projects.`,
       `I have worked on the implementation of a MVP for an education multiplayer board game and the website front-end for Sabin, a holding company of one of largest laboratories in Brazil.`,
     ],
     highlights: [
@@ -75,8 +75,8 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Backend Developer`,
     description: [
-      `Worked as backend developer and actively assisting the frontend functionalities for a small creative studio based in Berlin, building apps, campaigns and websites.`,
-      `Some of the clients I have been involved were Nokia, the danish clothing brand Joha and the insurance companies ASE and Danica Pension. I have also implemented the MVP of Bacon de Czar's own web application.`,
+      `Worked as backend developer and actively assisted the frontend functionalities for a small but ambitious creative studio based in Berlin: Building web applications, campaigns and websites.`,
+      `Some of the clients I have collaborated were Nokia, the danish clothing brand Joha and the insurance companies ASE and Danica Pension. I have also implemented the MVP of Bacon de Czar's own product.`,
     ],
     highlights: [
       `Joha (website)`,
@@ -94,8 +94,8 @@ const timelineItems = [
     location: `London, United Kingdom`,
     position: `Fullstack Developer`,
     description: [
-      `Being the first hire of the company, I have pushed my skills to new standards, taking a lot of ownership and doing front- and backend for important projects.`,
-      `The main highlights were the implementation of two e-commerces: One for the swiss shoe brand On and a bespoke platform for the britsh company Surface View.`,
+      `Being the first hire of the company, I have pushed my skills to new standards, taking a lot of ownership and delivering front- and backend for important projects.`,
+      `The main highlights were the implementation of two e-commerce platforms: One for the swiss shoe brand On and a bespoke solution for the british company Surface View.`,
     ],
     highlights: [
       `On-Running (e-commerce)`,
@@ -112,7 +112,7 @@ const timelineItems = [
     location: `London, United Kingdom`,
     position: `Fullstack Developer`,
     description: [
-      `I have collaborated on a friend’s project by implementing a marketplace platform for mining sites and equipments, as an opportunity to showcase my work for new hires in United Kingdom.`,
+      `I have collaborated on a friend’s project by implementing a marketplace platform for mining sites and equipments, as an opportunity to showcase my work for new hires in the United Kingdom.`,
     ],
     highlights: [`Mineral trade (MVP/web app)`],
     bullets: [`PHP`, `Zend`, `MySQL`],
@@ -151,7 +151,7 @@ const timelineItems = [
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
     description: [
-      `In my first internship, I assisted other engineers in some tasks, mainly related to a lightweight Linux distribution for Terminals and network setup for a cisco router.`,
+      `In my first internship, I assisted other engineers in some tasks, mainly related to a lightweight Linux distribution for Terminals and network setup for cisco routers.`,
     ],
     bullets: [`Linux`],
   },
