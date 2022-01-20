@@ -10,7 +10,7 @@ import Container from '@/components/layout/Container';
 const Header: NextPage = () => {
   const scrollPosition = useScrollPosition();
 
-  const [showHeader, setShowHeader] = useState(true);
+  const [showHeader, setShowHeader] = useState(false);
 
   useEffect(() => {
     if (scrollPosition > 150) {
