@@ -10,13 +10,13 @@ import { GoalRecord } from '@/models/Goal';
 const projects = [
   {
     title: `Gear Alert`,
-    description: `Experimental web application that connects to strava accounts and keep maintenance track of your cycling gear.`,
+    description: `Experimental web application that keeps maintenance track of cycling gear by querying user's strava account.`,
     github: `https://github.com/henriquebf/gearalert.henriquebf.com`,
     link: `https://gearalert.henriquebf.com`,
   },
   {
     title: `XR Development`,
-    description: `I'm currently experimenting with Unity 3D framework with the inital goal of learning the basics of an Oculus Quest application.`,
+    description: `I'm currently experimenting with Unity 3D framework and learning the fundamentals of an Oculus Quest VR interactions.`,
   },
   // {
   //   title: `Troffee Cycling Club`,

@@ -12,7 +12,10 @@ const timelineItems = [
     title: `Tempo GmbH`,
     location: `Berlin, Germany`,
     position: `Co-founder & CTO`,
-    description: `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the  application from MVP to production state and leading other 3 developers.`,
+    description: [
+      `Development of an Email client for OSX and mobile using (mostly) Typescript. Improving the application from MVP to production state and leading a small team of developers.`,
+      `Beyound the technical duties, there was a lot of learning for managing a multi-national business setup, its accounting, investment contracts, payroll and last but not least, the liquidation of the business.`,
+    ],
     bullets: ['Typescript', 'React + Redux', 'Electron', 'React Native'],
     thumb: 'timeline-thumb-tempo.svg',
     link: {
@@ -26,7 +29,10 @@ const timelineItems = [
     title: `Pillar GmbH`,
     location: `Berlin, Germany`,
     position: `Co-founder & Fullstack Developer`,
-    description: `Co-running a business to implement MVPs, websites and small e-commerce solutions for external clients. The highest goal is providing the best user experience.`,
+    description: [
+      `Co-founded a creative development studio with Onno Schwanen and implemented applications, websites and small e-commerce solutions - aiming to deliver the best possible user experience.`,
+      `Our portfolio includes projects for Google, Zalando, Hyper Island, MVPs for startups and consultancy work for agencies in Europe and United States of America.`,
+    ],
     highlights: [
       `Tempo (MVP/desktop application)`,
       `Diggsweep (MVP/web application)`,
@@ -51,7 +57,9 @@ const timelineItems = [
     title: `Freelancer`,
     location: `Berlin, Germany`,
     position: `Fullstack Developer`,
-    description: `After my previous employer's business shut down, I’ve done some solo work as a freelancer for clients in Brazil and Germany.`,
+    description: [
+      `After my previous employer's business shut down, I’ve done some solo work as a freelancer for clients in Brazil and Germany.`,
+    ],
     highlights: [
       `Apice (MVP/educational game)`,
       `Sabin (website frontend)`,
@@ -65,7 +73,9 @@ const timelineItems = [
     title: `Bacon de Czar GmbH`,
     location: `Berlin, Germany`,
     position: `Backend Developer`,
-    description: `Worked as backend developer and actively assisting the frontend functionalities for a small creative studio based in Berlin, building apps, campaigns and websites.`,
+    description: [
+      `Worked as backend developer and actively assisting the frontend functionalities for a small creative studio based in Berlin, building apps, campaigns and websites.`,
+    ],
     highlights: [
       `Joha (website)`,
       `Nokia (campaign website)`,
@@ -81,7 +91,9 @@ const timelineItems = [
     title: `Made Tech Limited`,
     location: `London, United Kingdom`,
     position: `Fullstack Developer`,
-    description: `Being the first hire of the company, I have pushed my skills to new standards, taking a lot of ownership and doing front- and backend for important projects.`,
+    description: [
+      `Being the first hire of the company, I have pushed my skills to new standards, taking a lot of ownership and doing front- and backend for important projects.`,
+    ],
     highlights: [
       `On-Running (e-commerce)`,
       `Surface view (e-commerce)`,
@@ -96,7 +108,9 @@ const timelineItems = [
     title: `Freelancer`,
     location: `London, United Kingdom`,
     position: `Fullstack Developer`,
-    description: `I have collaborated with a friend’s project by implementing his MVP, with the main benefit of buidling a showcase to potential new hires.`,
+    description: [
+      `I have collaborated with a friend’s project by implementing his MVP, with the main benefit of buidling a showcase to potential new hires.`,
+    ],
     highlights: [`Mineral trade (MVP/web app)`],
     bullets: [`PHP`, `Zend`, `MySQL`],
   },
@@ -106,7 +120,9 @@ const timelineItems = [
     title: `Tasco Ltda.`,
     location: `Belo Horizonte, Brazil`,
     position: `Software Developer`,
-    description: `Working on a small and young team, I made a big contribution for most company’s products, by building very professional web based user interfaces.`,
+    description: [
+      `Working on a small and young team, I made a big contribution for most company’s products, by building very professional web based user interfaces.`,
+    ],
     highlights: [
       `Noklink suite (desktop app)`,
       `Tracking box (web application)`,
@@ -120,7 +136,9 @@ const timelineItems = [
     title: `Versão Brasileira Ltda.`,
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
-    description: `Hired as an intern, I was able to play my first role as a developer of a catalogue CD-ROM for my city, having a great support from the database provider.`,
+    description: [
+      `Hired as an intern, I was able to play my first role as a developer of a catalogue CD-ROM for my city, having a great support from the database provider.`,
+    ],
     bullets: [`Javascript`, `Lightbase`],
   },
   {
@@ -129,7 +147,9 @@ const timelineItems = [
     title: `Multiline Ltda.`,
     location: `Belo Horizonte, Brazil`,
     position: `Intern`,
-    description: `In my first internship, I assisted other developers in some tasks, mainly related to Linux and network.`,
+    description: [
+      `In my first internship, I assisted other developers in some tasks, mainly related to Linux and network.`,
+    ],
     bullets: [`Linux`],
   },
   {
@@ -138,7 +158,9 @@ const timelineItems = [
     title: `Pontifícia Universidade Católica de Minas Gerais`,
     location: `Belo Horizonte, Brazil`,
     position: `Bachelor - Control and Automation Engineer`,
-    description: `It is fair to say that the logic I was ever most proud of, was the one designed by my graduation thesis. It was an out-of-the-box and simplified implementation of the trajectory generation for a robot of type SCARA. It was visually simulated in a 3D robot plugin for Matlab.`,
+    description: [
+      `It is fair to say that the logic I was ever most proud of, was the one designed by my graduation thesis. It was an out-of-the-box and simplified implementation of the trajectory generation for a robot of type SCARA. It was visually simulated in a 3D robot plugin for Matlab.`,
+    ],
     bullets: [`CIM`, `C++`, `Assembly`, `Eletronics`, `Robotics`, `PID`],
   },
 ];
@@ -150,14 +172,14 @@ const Timeline: NextPage = () => {
         <div className="content">
           <h2>Career Timeline</h2>
           <p>
-            <b>Current status:</b> Parental leave from december 2021 until April
-            2022.
+            <b>Current status:</b> Parental leave until April 2022.
           </p>
           <p>
-            In case of any interest to discuss the possibility of future
-            collaboration, please feel free to reach me on{' '}
+            Do you like my profile and have interest to discuss future
+            collaboration? Please don't hesitate to contact me directly via the
+            email{' '}
             <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>{' '}
-            or any other channel provided in this website.
+            or any of my social channels.
           </p>
           <div className="timeline-top"></div>
           <div className="wrapper">

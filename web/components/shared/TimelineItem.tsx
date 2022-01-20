@@ -15,7 +15,7 @@ type Item = {
   title: string;
   location: string;
   position: string;
-  description: string;
+  description: string[];
   highlights?: string[];
   bullets: string[];
   thumb?: string;
@@ -42,9 +42,12 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
       <div className={classNames(['time', direction])}>
         {item.time} ({item.duration})
       </div>
-      <div className={classNames(['description', direction])}>
-        {item.description}
-      </div>
+      {item.description.map((paragraph) => (
+        <div className={classNames(['description', direction])}>
+          {paragraph}
+        </div>
+      ))}
+
       {item.link && (
         <div className={classNames(['link', direction])}>
           <a href={item.link.url} rel="noreferrer" target="_blank">

@@ -39,7 +39,7 @@ const About: NextPage = () => {
               </h3>
               <h3>
                 20+ years experience building e-commerces and applications for
-                Web, Desktop and Mobile.
+                Web, Desktop, Mobile or anything you can write a line of code.
               </h3>
               <div className="social-icons">
                 <SocialIcons />
