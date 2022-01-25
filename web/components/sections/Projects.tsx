@@ -15,8 +15,8 @@ const projects = [
     link: `https://gearalert.henriquebf.com`,
   },
   {
-    title: `XR Development`,
-    description: `I'm currently experimenting with Unity 3D framework and learning the fundamentals of an Oculus Quest VR interactions.`,
+    title: `XR Playground`,
+    description: `I'm currently experimenting with Unity 3D framework and learning the fundamentals of VR interactions using Oculus Quest 2 device.`,
     github: `https://github.com/henriquebf/xr-playground`,
   },
   // {
