@@ -17,6 +17,7 @@ const projects = [
   {
     title: `XR Development`,
     description: `I'm currently experimenting with Unity 3D framework and learning the fundamentals of an Oculus Quest VR interactions.`,
+    github: `https://github.com/henriquebf/xr-playground`,
   },
   // {
   //   title: `Troffee Cycling Club`,

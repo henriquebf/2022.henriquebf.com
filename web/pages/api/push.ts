@@ -52,7 +52,7 @@ export default async function handler(
     await Goal.save(
       goal ? { ...goal, distance } : { athleteId: athlete.id, distance }
     );
-    console.log(`api/push: updated for ${req.body.owner_id} (${distance})m.`);
+    console.log(`api/push: updated for ${req.body.owner_id}. (${distance}m)`);
   } else {
     console.error(`api/push: invalid distance for ${req.body.owner_id}!`);
   }
