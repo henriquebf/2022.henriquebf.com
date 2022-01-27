@@ -30,25 +30,20 @@ export default async function handler(
   // Execute user push
   console.log(`api/push: receiving push for ${req.body.owner_id}...`);
 
-  if (!process.env.STRAVA_REFRESH_TOKEN) {
-    throw new Error('push: STRAVA_REFRESH_TOKEN not provided!');
+  // Find refresh token
+  const goal = await Goal.findOne({ athleteId: req.body.owner_id });
+  if (!goal?.refreshToken) {
+    throw new Error('api/push: could not find a valid refreshToken!');
   }
 
   // Update access token
-  const data = await postOAuthToken(
-    process.env.STRAVA_REFRESH_TOKEN,
-    'refresh_token'
-  );
+  const data = await postOAuthToken(goal.refreshToken, 'refresh_token');
   if (!data?.access_token) {
     throw new Error('api/push: invalid token response!');
   }
 
   // Update Goal data
   const athlete = await getAthlete(data.access_token);
-  if (athlete?.id !== req.body.owner_id) {
-    throw new Error('push: invalid STRAVA_REFRESH_TOKEN!');
-  }
-  const goal = await Goal.findOne({ athleteId: athlete.id });
   const athleteStats = await getAthleteStats(data.access_token, athlete.id);
   const distance = athleteStats?.ytd_ride_totals?.distance;
   if (distance >= 0) {

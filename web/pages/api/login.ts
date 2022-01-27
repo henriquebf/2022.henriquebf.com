@@ -15,9 +15,10 @@ export default withSessionRoute(async (req, res) => {
 
     // Request tokens from Strava
     const data = await postOAuthToken(req.query.code, 'authorization_code');
-    if (!data?.athlete?.id) {
+    if (!data?.athlete?.id || !data?.refresh_token) {
       throw new Error('oauth: invalid token response!');
     }
+    const refreshToken = data.refresh_token;
 
     // Check if strava user has admin credentials
     if (process.env.STRAVA_ADMIN_ID !== String(data.athlete.id)) {
@@ -31,7 +32,9 @@ export default withSessionRoute(async (req, res) => {
     const distance = athleteStats?.ytd_ride_totals?.distance;
     if (distance >= 0) {
       await Goal.save(
-        goal ? { ...goal, distance } : { athleteId: athlete.id, distance }
+        goal
+          ? { ...goal, refreshToken, distance }
+          : { athleteId: athlete.id, refreshToken, distance }
       );
     }
 

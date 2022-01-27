@@ -4,6 +4,7 @@ import { find, findOne, updateMany, deleteMany } from '@/lib/db';
 export interface GoalRecord {
   id: string;
   athleteId: number;
+  refreshToken: string;
   total: number;
   distance: number;
 }
