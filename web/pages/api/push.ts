@@ -45,6 +45,9 @@ export default async function handler(
 
   // Update Goal data
   const athlete = await getAthlete(data.access_token);
+  if (athlete?.id !== req.body.owner_id) {
+    throw new Error('push: invalid STRAVA_REFRESH_TOKEN!');
+  }
   const goal = await Goal.findOne({ athleteId: athlete.id });
   const athleteStats = await getAthleteStats(data.access_token, athlete.id);
   const distance = athleteStats?.ytd_ride_totals?.distance;
