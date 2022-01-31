@@ -37,6 +37,7 @@ export const getMonth = (
   inputdate?: Date // Only used by testing suite
 ): Month => {
   const date = inputdate || new Date();
+  date.setDate(1);
   date.setMonth(date.getMonth() + n);
   const name = monthNames[date.getMonth()];
   const year = date.getFullYear();
