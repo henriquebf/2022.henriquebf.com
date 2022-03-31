@@ -13,8 +13,8 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Co-founder & CTO`,
     description: [
-      `Development of an Email client for OSX and mobile using Typescript (mostly). Improving the application from MVP state to production and leading a small team of remote developers.`,
-      `Beyond the technical duties, there was a lot of learning for managing a multi-national business setup, its accounting, investment contracts, payroll and last but not least, the business liquidation.`,
+      `Development of an Email client for OSX and mobile using Typescript (mostly). Designing the architecture from MVP state to production and leading a young and remote team of developers.`,
+      `Beyond the technical duties, there was a lot of management for a multi-national business setup, accounting, investment contracts, payroll and last but not least, the business liquidation.`,
     ],
     bullets: ['Typescript', 'React + Redux', 'Electron', 'React Native'],
     thumb: 'timeline-thumb-tempo.svg',
@@ -30,7 +30,7 @@ const timelineItems = [
     location: `Berlin, Germany`,
     position: `Co-founder & Fullstack Developer`,
     description: [
-      `Co-founded a creative development studio with Onno Schwanen and implemented applications, websites and small e-commerce solutions - aiming to deliver the best possible user experience.`,
+      `Co-founded a creative development studio with Onno Schwanen and implemented applications, websites and e-commerce solutions - aiming to deliver the best possible user experience.`,
       `Our portfolio includes projects for Google, Zalando, Hyper Island, several MVPs for startups and consultancy work for agencies in Europe and North America.`,
     ],
     highlights: [
