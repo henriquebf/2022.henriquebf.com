@@ -42,8 +42,8 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
       <div className={classNames(['time', direction])}>
         {item.time} ({item.duration})
       </div>
-      {item.description.map((paragraph) => (
-        <div className={classNames(['description', direction])}>
+      {item.description.map((paragraph, i) => (
+        <div key={i} className={classNames(['description', direction])}>
           {paragraph}
         </div>
       ))}
