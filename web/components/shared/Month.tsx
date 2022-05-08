@@ -1,38 +1,35 @@
 import type { NextPage } from 'next';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
-import { getHours } from '@/helpers/calendarHelper';
 import { classNames } from '@/helpers/utilsHelper';
-import { AvailabilityRecord } from '@/models/Availability';
+import { AvailabilityMonth } from '@/models/Availability';
 
 type Props = {
   name: string;
   year: number;
-  availabilities: AvailabilityRecord[];
+  availableHours: number;
 };
 
-const Month: NextPage<Props> = ({ name, year, availabilities }) => {
-  const hours = getHours(name, year, availabilities);
-
+const Month: NextPage<Props> = ({ name, year, availableHours }) => {
   return (
     <div className="month">
       <div className="calendar">
         {name} {year}
       </div>
 
-      {hours > 0 && (
+      {availableHours > 0 && (
         <div
           className={classNames([
             'info',
             'hours',
-            hours < 64 ? 'warning' : undefined,
+            availableHours < 64 ? 'warning' : undefined,
           ])}
         >
-          {`${hours}h`}
+          {`${availableHours}h`}
         </div>
       )}
 
-      {hours === 0 && (
+      {availableHours === 0 && (
         <div className={classNames(['info', 'unavailable'])}>unavailable</div>
       )}
 

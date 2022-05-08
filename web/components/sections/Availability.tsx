@@ -3,26 +3,23 @@ import zIndexes from '@/config/zIndexes.json';
 import colors from '@/config/colors.json';
 import Container from '@/components/layout/Container';
 import Month from '@/components/shared/Month';
-import { getMonth } from '@/helpers/calendarHelper';
-import { AvailabilityRecord } from '@/models/Availability';
+import { AvailabilityMonth } from '@/models/Availability';
 
 type Props = {
-  availabilities: AvailabilityRecord[];
+  availabilityMonths: AvailabilityMonth[];
 };
 
-const Availability: NextPage<Props> = ({ availabilities }) => {
-  const months = [0, 1, 2, 3, 4, 5].map((n) => getMonth(n));
-
+const Availability: NextPage<Props> = ({ availabilityMonths }) => {
   return (
     <section id="availability">
       <Container>
         <div className="content">
           <h2>Availability</h2>
           <div className="calendars">
-            {months.map(({ name, year }) => (
+            {availabilityMonths.map(({ name, year, availableHours }) => (
               <Month
                 key={name}
-                availabilities={availabilities}
+                availableHours={availableHours}
                 name={name}
                 year={year}
               />

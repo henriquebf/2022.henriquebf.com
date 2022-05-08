@@ -6,15 +6,15 @@ import ProjectsSection from '@/components/sections/Projects';
 import TimelineSection from '@/components/sections/Timeline';
 import AvailabilitySection from '@/components/sections/Availability';
 import Footer from '@/components/sections/Footer';
-import Availability, { AvailabilityRecord } from '@/models/Availability';
+import Availability, { AvailabilityMonth } from '@/models/Availability';
 import Goal, { GoalRecord } from '@/models/Goal';
 
 type Props = {
   goal: GoalRecord;
-  availabilities: AvailabilityRecord[];
+  availabilityMonths: AvailabilityMonth[];
 };
 
-const Home: NextPage<Props> = ({ goal, availabilities }) => {
+const Home: NextPage<Props> = ({ goal, availabilityMonths }) => {
   const title = 'Henrique Ferreira';
   const description = 'A Road Cycling enthusiast and Fullstack Developer.';
   const image = 'https://henriquebf.com/meta-opengraph.jpg';
@@ -38,7 +38,7 @@ const Home: NextPage<Props> = ({ goal, availabilities }) => {
       <AboutSection />
       <ProjectsSection goal={goal} />
       <TimelineSection />
-      <AvailabilitySection availabilities={availabilities} />
+      <AvailabilitySection availabilityMonths={availabilityMonths} />
       <Footer />
     </>
   );
@@ -48,9 +48,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const goal = await Goal.findOne({
     athleteId: Number(process.env.STRAVA_ADMIN_ID),
   });
-  const availabilities = await Availability.find({});
+  const availabilityMonths = await Availability.findAvailableMonths(6);
 
-  return { props: { goal, availabilities } };
+  return { props: { goal, availabilityMonths } };
 };
 
 export default Home;

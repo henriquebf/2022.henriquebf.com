@@ -1,5 +1,8 @@
 import * as uuid from 'uuid';
+import { range } from 'lodash';
 import { find, findOne, updateMany, deleteMany } from '@/lib/db';
+import { getMonth } from '@/helpers/calendarHelper';
+import { getHours } from '@/helpers/calendarHelper';
 
 export interface AvailabilityRecord {
   id: string;
@@ -8,8 +11,37 @@ export interface AvailabilityRecord {
   unavailableDays: string; // '12,13,14' | 'all'
 }
 
+export interface AvailabilityMonth {
+  name: string;
+  year: number;
+  availableHours: number;
+}
+
 class Availability {
   _collection: string = 'availabilities';
+
+  // Definitions
+  _isAlwaysUnavailable: boolean = true;
+
+  // Logic transactions
+  async findAvailableMonths(
+    followingMonths: number
+  ): Promise<AvailabilityMonth[]> {
+    const months = range(followingMonths);
+    const availabilities = await this.find({});
+
+    return months
+      .map((n) => getMonth(n))
+      .map(({ name, year }) => {
+        return {
+          name: name,
+          year: year,
+          availableHours: this._isAlwaysUnavailable
+            ? 0
+            : getHours(name, year, availabilities),
+        };
+      });
+  }
 
   // DB Transactions
   async find(
