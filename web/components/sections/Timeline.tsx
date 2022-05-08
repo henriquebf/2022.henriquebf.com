@@ -175,18 +175,13 @@ const Timeline: NextPage = () => {
         <div className="content">
           <h2>Career Timeline</h2>
           <p>
-            <b>Current status:</b> Starting as a <b>Product Engineer</b> at{' '}
+            <b>Latest situation: </b>
+            After dedicating a few months for my little daughter, I'm very proud
+            to announce I'm joining{' '}
             <a href="https://framer.com" target="blank">
               Framer
             </a>{' '}
-            in June 2022.
-          </p>
-          <p>
-            Do you like my profile and have interest to discuss future
-            collaboration? Please don't hesitate to contact me directly via the
-            email{' '}
-            <a href="mailto:contact@henriquebf.com">contact@henriquebf.com</a>{' '}
-            or any of my social channels.
+            as a Product Engineer starting in June 2022.
           </p>
           <div className="timeline-top"></div>
           <div className="wrapper">
