@@ -175,7 +175,8 @@ const Timeline: NextPage = () => {
         <div className="content">
           <h2>Career Timeline</h2>
           <p>
-            <b>Current status:</b> Parental leave until April 2022.
+            <b>Current status:</b> Starting as a <b>Product Engineer</b> at{' '}
+            <a href="https://framer.com">Framer</a> in June 2022.
           </p>
           <p>
             Do you like my profile and have interest to discuss future
