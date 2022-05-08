@@ -21,7 +21,7 @@ class Availability {
   _collection: string = 'availabilities';
 
   // Definitions
-  _isAlwaysUnavailable: boolean = true;
+  _isNeverAvailable: boolean = true;
 
   // Logic transactions
   async findAvailableMonths(
@@ -36,7 +36,7 @@ class Availability {
         return {
           name: name,
           year: year,
-          availableHours: this._isAlwaysUnavailable
+          availableHours: this._isNeverAvailable
             ? 0
             : getHours(name, year, availabilities),
         };
