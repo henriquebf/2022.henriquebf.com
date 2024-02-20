@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Header from '@/components/sections/Header';
 import AboutSection from '@/components/sections/About';
 import ProjectsSection from '@/components/sections/Projects';
-import TimelineSection from '@/components/sections/Timeline';
+import ExperienceSection from '@/components/sections/Experience';
 import AvailabilitySection from '@/components/sections/Availability';
 import Footer from '@/components/sections/Footer';
 import Availability, { AvailabilityMonth } from '@/models/Availability';
@@ -37,7 +37,7 @@ const Home: NextPage<Props> = ({ goal, availabilityMonths }) => {
       <Header />
       <AboutSection />
       <ProjectsSection goal={goal} />
-      <TimelineSection />
+      <ExperienceSection />
       <AvailabilitySection availabilityMonths={availabilityMonths} />
       <Footer />
     </>
