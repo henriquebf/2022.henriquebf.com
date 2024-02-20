@@ -27,9 +27,9 @@ type Props = {
   item: Item;
 };
 
-const TimelineItem: NextPage<Props> = ({ direction, item }) => {
+const ExperienceItem: NextPage<Props> = ({ direction, item }) => {
   return (
-    <div className="timeline-item">
+    <div className="experience-item">
       {item.thumb && (
         <div className={classNames(['thumb', direction])}>
           <Image src={`/${item.thumb}`} alt="Tempo" width={540} height={250} />
@@ -183,4 +183,4 @@ const TimelineItem: NextPage<Props> = ({ direction, item }) => {
   );
 };
 
-export default TimelineItem;
+export default ExperienceItem;

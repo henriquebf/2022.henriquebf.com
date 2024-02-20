@@ -3,9 +3,35 @@ import zIndexes from '@/config/zIndexes.json';
 import colors from '@/config/colors.json';
 import sizes from '@/config/sizes.json';
 import Container from '@/components/layout/Container';
-import TimelineItem from '@/components/shared/TimelineItem';
+import ExperienceItem from '@/components/shared/ExperienceItem';
 
-const timelineItems = [
+const experienceItems = [
+  {
+    time: `2022 - 2024`,
+    duration: `2 years`,
+    title: `Framer B.V.`,
+    location: `Amsterdam, The Netherlands (Remote)`,
+    position: `Product Engineer`,
+    description: [
+      `Implemented Project Permissions feature, to be offered in a newly created Pro Workspace plan, enabling more granular permissions (Design, Content and Publish) to editors for each project, also creating protections in the backend to assure security and compliance.`,
+      `Implemented frontend for Stripe Checkout and improved its experience by introducting the Free Workspace plan, which skips an extra step in first checkout when current workspace does not have additional editors, but instead prompting for a one click upgrade when a first editor is added.`,
+      `Improved cost transparecy by sending notifications to workspace admins about the increased costs when paid editors are joining the team.`,
+      `Worked on Static Site Generation and Framer Motion library to Tree Shake unused scripts out of optimised sites and reducing their laoding size.`,
+    ],
+    highlights: [
+      `Project Permissions`,
+      `Free Worskpace`,
+      `Upsells`,
+      `Stripe Checkout`,
+      `Tree Shaking`,
+    ],
+    bullets: ['Typescript', 'React', 'Microservices', 'GOLANG'],
+    thumb: 'experience-thumb-framer.svg',
+    link: {
+      text: `Visit Framer website`,
+      url: `https://framer.com`,
+    },
+  },
   {
     time: `2020 - 2021`,
     duration: `2 years`,
@@ -17,7 +43,7 @@ const timelineItems = [
       `Beyond the technical duties, there was a lot of management for a multi-national business setup, accounting, investment contracts, payroll and last but not least, the business liquidation.`,
     ],
     bullets: ['Typescript', 'React + Redux', 'Electron', 'React Native'],
-    thumb: 'timeline-thumb-tempo.svg',
+    thumb: 'experience-thumb-tempo.svg',
     link: {
       text: `Visit Tempo website`,
       url: `https://yourtempo.co`,
@@ -45,7 +71,7 @@ const timelineItems = [
       `Fluxdrive (bespoke CMS)`,
     ],
     bullets: ['ES6+', 'React + Redux', 'Node', 'MongoDB', 'Docker'],
-    thumb: 'timeline-thumb-pillar.svg',
+    thumb: 'experience-thumb-pillar.svg',
     link: {
       text: `Visit Pillar website`,
       url: `https://pillarstudio.com`,
@@ -164,16 +190,16 @@ const timelineItems = [
     description: [
       `In my graduation thesis I have developed an out-of-the-box implementation of the trajectory generation for a robot of type SCARA. It was visually simulated in a 3D robot plugin for Matlab.`,
     ],
-    bullets: [`CIM`, `C++`, `Assembly`, `Eletronics`, `Robotics`, `PID`],
+    bullets: [`CIM`, `C++`, `Electronics`, `Robotics`, `PID`],
   },
 ];
 
-const Timeline: NextPage = () => {
+const Experience: NextPage = () => {
   return (
-    <section id="timeline">
+    <section id="experience">
       <Container>
         <div className="content">
-          <h2>Career Timeline</h2>
+          <h2>Experience</h2>
           <p>
             <b>Latest situation: </b>
             After dedicating a few months for my little daughter, I'm very proud
@@ -183,27 +209,27 @@ const Timeline: NextPage = () => {
             </a>{' '}
             as a Product Engineer starting in June 2022.
           </p>
-          <div className="timeline-top"></div>
+          <div className="experience-top"></div>
           <div className="wrapper">
-            <div className="timeline-dummy" />
-            <div className="timeline-center first" />
-            <div className="timeline-dummy" />
+            <div className="experience-dummy" />
+            <div className="experience-center first" />
+            <div className="experience-dummy" />
           </div>
-          {timelineItems.map((item, i) => {
+          {experienceItems.map((item, i) => {
             if (i % 2 === 0) {
               return (
                 <div key={i} className="wrapper">
-                  <TimelineItem item={item} direction="left" />
-                  <div className="timeline-center middle" />
-                  <div className="timeline-dummy" />
+                  <ExperienceItem item={item} direction="left" />
+                  <div className="experience-center middle" />
+                  <div className="experience-dummy" />
                 </div>
               );
             } else {
               return (
                 <div key={i} className="wrapper">
-                  <div className="timeline-dummy" />
-                  <div className="timeline-center middle" />
-                  <TimelineItem item={item} direction="right" />
+                  <div className="experience-dummy" />
+                  <div className="experience-center middle" />
+                  <ExperienceItem item={item} direction="right" />
                 </div>
               );
             }
@@ -211,7 +237,7 @@ const Timeline: NextPage = () => {
         </div>
       </Container>
       <style jsx>{`
-        #timeline {
+        #experience {
           position: relative;
           z-index: ${zIndexes.section};
           background-color: ${colors.light.bg_secondary_color};
@@ -223,7 +249,7 @@ const Timeline: NextPage = () => {
         }
 
         @media (prefers-color-scheme: dark) {
-          #timeline {
+          #experience {
             background-color: ${colors.dark.bg_secondary_color};
           }
 
@@ -232,7 +258,7 @@ const Timeline: NextPage = () => {
           }
         }
 
-        .timeline-top {
+        .experience-top {
           display: none;
         }
 
@@ -271,16 +297,16 @@ const Timeline: NextPage = () => {
           }
         }
 
-        .timeline-center {
+        .experience-center {
           display: none;
         }
 
-        .timeline-dummy {
+        .experience-dummy {
           display: none;
         }
 
         @media (min-width: ${sizes.container}) {
-          .timeline-top {
+          .experience-top {
             display: block;
             width: 100px;
             height: 1px;
@@ -292,14 +318,14 @@ const Timeline: NextPage = () => {
             grid-template-columns: 50% 1px 50%;
           }
 
-          .timeline-center {
+          .experience-center {
             display: block;
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
           }
 
-          .timeline-center:after {
+          .experience-center:after {
             content: '';
             position: absolute;
             width: 1px;
@@ -309,33 +335,33 @@ const Timeline: NextPage = () => {
             margin-left: -1px;
           }
 
-          .timeline-center.middle:after {
+          .experience-center.middle:after {
             background-color: ${colors.light.border_highlight_color};
           }
 
-          .timeline-center.first,
-          .timeline-center.last {
+          .experience-center.first,
+          .experience-center.last {
             height: 60px;
           }
 
-          .timeline-center.first:after {
+          .experience-center.first:after {
             background-color: ${colors.light.border_highlight_color};
           }
 
-          .timeline-dummy {
+          .experience-dummy {
             display: block;
           }
 
           @media (prefers-color-scheme: dark) {
-            .timeline-top {
+            .experience-top {
               background-color: ${colors.dark.border_highlight_color};
             }
 
-            .timeline-center.middle:after {
+            .experience-center.middle:after {
               background-color: ${colors.dark.border_highlight_color};
             }
 
-            .timeline-center.first:after {
+            .experience-center.first:after {
               background-color: ${colors.dark.border_highlight_color};
             }
           }
@@ -345,4 +371,4 @@ const Timeline: NextPage = () => {
   );
 };
 
-export default Timeline;
+export default Experience;
