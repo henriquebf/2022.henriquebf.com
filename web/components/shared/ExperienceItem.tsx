@@ -32,7 +32,12 @@ const ExperienceItem: NextPage<Props> = ({ direction, item }) => {
     <div className="experience-item">
       {item.thumb && (
         <div className={classNames(['thumb', direction])}>
-          <Image src={`/${item.thumb}`} alt="Tempo" width={540} height={250} />
+          <Image
+            src={`/${item.thumb}`}
+            alt={item.title}
+            width={540}
+            height={250}
+          />
         </div>
       )}
       <div className={classNames(['title', direction])}>
