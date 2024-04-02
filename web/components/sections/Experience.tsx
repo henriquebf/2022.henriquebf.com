@@ -13,17 +13,16 @@ const experienceItems = [
     location: `Amsterdam, The Netherlands (Remote)`,
     position: `Product Engineer`,
     description: [
-      `Implemented Project Permissions feature, to be offered in a newly created Pro Workspace plan, enabling more granular permissions (Design, Content and Publish) to editors for each project, also creating protections in the backend to assure security and compliance.`,
-      `Implemented frontend for Stripe Checkout and improved its experience by introducting the Free Workspace plan, which skips an extra step in first checkout when current workspace does not have additional editors, but instead prompting for a one click upgrade when a first editor is added.`,
-      `Improved cost transparecy by sending notifications to workspace admins about the increased costs when paid editors are joining the team.`,
-      `Worked on Static Site Generation and Framer Motion library to Tree Shake unused scripts out of optimised sites and reducing their laoding size.`,
+      `Collaborated with product designers making sure to provide the best user experience on subscribing/upgrading plans, implementing upsells for new features, and improving flows to reduce customer support.`,
+      `Iterated in both front and backend stack, taking full ownership of features like Project Permissions, allowing for more nuanced control over permissions for editors within each project.`,
     ],
     highlights: [
       `Project Permissions`,
-      `Free Worskpace`,
+      `Free Worskpace Plan`,
       `Upsells`,
       `Stripe Checkout`,
       `Tree Shaking`,
+      `SSG`,
     ],
     bullets: ['Typescript', 'React', 'Microservices', 'GOLANG'],
     thumb: 'experience-thumb-framer.svg',
@@ -201,13 +200,12 @@ const Experience: NextPage = () => {
         <div className="content">
           <h2>Experience</h2>
           <p>
-            <b>Latest situation: </b>
-            After dedicating a few months for my little daughter, I'm very proud
-            to announce I'm joining{' '}
-            <a href="https://framer.com" target="blank">
-              Framer
-            </a>{' '}
-            as a Product Engineer starting in June 2022.
+            As a versatile software engineer, I specialize in crafting top-notch
+            products, focused on delivering exceptional user experience with
+            optimal performance. My expertise spans across web, mobile, and
+            desktop platforms, enabling me to develop world-class software
+            solutions. In addition to my technical prowess, I bring valuable
+            experience in managing businesses and growing an engineering team.
           </p>
           <div className="experience-top"></div>
           <div className="wrapper">
