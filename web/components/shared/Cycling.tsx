@@ -5,10 +5,12 @@ import { getSchedule } from '@/helpers/cyclingHelper';
 import { GoalRecord } from '@/models/Goal';
 
 type Props = {
-  goal: GoalRecord;
+  goal: GoalRecord | null;
 };
 
 const Cycling: NextPage<Props> = ({ goal }) => {
+  if (!goal) return null;
+
   const { total, distance } = goal;
   const progress = (Math.ceil(distance * 100) / total).toFixed(1);
   const schedule = getSchedule(total, distance);

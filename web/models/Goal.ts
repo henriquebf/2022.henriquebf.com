@@ -20,11 +20,11 @@ class Goal {
     return find(this._collection, filter, { distance: -1 });
   }
 
-  async findOne(filter: Partial<GoalRecord>): Promise<GoalRecord> {
+  async findOne(filter: Partial<GoalRecord>): Promise<GoalRecord | null> {
     return findOne(this._collection, filter);
   }
 
-  async save(item: Partial<GoalRecord>): Promise<GoalRecord | undefined> {
+  async save(item: Partial<GoalRecord>): Promise<GoalRecord | null> {
     if (!item.id) {
       item.id = uuid.v4();
     }
