@@ -21,7 +21,7 @@ class Availability {
   _collection: string = 'availabilities';
 
   // Definitions
-  _isNeverAvailable: boolean = true;
+  _isNeverAvailable: boolean = false;
 
   // Logic transactions
   async findAvailableMonths(
