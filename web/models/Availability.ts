@@ -28,6 +28,7 @@ class Availability {
     followingMonths: number
   ): Promise<AvailabilityMonth[]> {
     const months = range(followingMonths);
+    ``;
     const availabilities = await this.find({});
 
     return months
@@ -52,13 +53,13 @@ class Availability {
 
   async findOne(
     filter: Partial<AvailabilityRecord>
-  ): Promise<AvailabilityRecord> {
+  ): Promise<AvailabilityRecord | null> {
     return findOne(this._collection, filter);
   }
 
   async save(
     item: Partial<AvailabilityRecord>
-  ): Promise<AvailabilityRecord | undefined> {
+  ): Promise<AvailabilityRecord | null> {
     if (!item.id) {
       item.id = uuid.v4();
     }

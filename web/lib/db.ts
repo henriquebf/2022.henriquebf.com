@@ -22,14 +22,14 @@ interface AnyObject {
 export const findOne = async (
   collection: string,
   filter: AnyObject
-): Promise<any | undefined> => {
+): Promise<any | null> => {
   return new Promise(async (resolve) => {
     const client = await clientPromise;
     client
       .db(dbName)
       .collection(collection)
       .findOne(filter, { projection: { _id: 0 } })
-      .then((record) => resolve(record ?? undefined))
+      .then((record) => resolve(record ?? null))
       .catch((err: Error) => {
         throw new Error(`db:findOne:${collection} - ${err.message}`);
       });
