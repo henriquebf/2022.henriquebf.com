@@ -1,10 +1,12 @@
 import type { AppProps } from 'next/app';
 import colors from '@/config/colors.json';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div id="app">
       <Component {...pageProps} />
+      <Analytics />
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800|Saira:100,200,300,400,500,600,700,800');
 
