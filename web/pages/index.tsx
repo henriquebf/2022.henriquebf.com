@@ -15,10 +15,10 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ goal, availabilityMonths }) => {
-  const title = 'Henrique Ferreira';
-  const description = 'A Road Cycling enthusiast and Fullstack Developer.';
-  const image = 'https://henriquebf.com/meta-opengraph.jpg';
-  const icon = 'https://henriquebf.com/favicon.png';
+  const title = `Henrique Ferreira - Fullstack Developer based in The Netherlands`;
+  const description = `A Road Cycling enthusiast and Fullstack Developer that delivers exceptional user experience with optimal performance.`;
+  const image = `https://henriquebf.com/meta-opengraph.jpg`;
+  const icon = `https://henriquebf.com/favicon.png`;
 
   return (
     <>
