@@ -28,9 +28,10 @@ export const findOne = async (
     client
       .db(dbName)
       .collection(collection)
-      .findOne(filter, { projection: { _id: 0 } }, (err, record) => {
-        if (err) throw new Error(`db:findOne: Failed for ${collection}!`);
-        resolve(record ?? undefined);
+      .findOne(filter, { projection: { _id: 0 } })
+      .then((record) => resolve(record ?? undefined))
+      .catch((err: Error) => {
+        throw new Error(`db:findOne:${collection} - ${err.message}`);
       });
   });
 };
@@ -51,9 +52,10 @@ export const find = async (
       .skip(offset ?? 0)
       .limit(limit ?? 999999)
       .sort(sort ?? { updatedAt: -1 })
-      .toArray((err, records) => {
-        if (err) throw new Error(`db:find: Failed for ${collection}!`);
-        resolve(records ?? []);
+      .toArray()
+      .then((records) => resolve(records ?? []))
+      .catch((err: Error) => {
+        throw new Error(`db:find:${collection} - ${err.message}`);
       });
   });
 };
@@ -68,9 +70,10 @@ export const updateMany = async (
     client
       .db(dbName)
       .collection(collection)
-      .updateMany(filter, { $set: properties }, { upsert: true }, (err) => {
-        if (err) throw new Error(`db:updateMany: Failed for ${collection}!`);
-        resolve();
+      .updateMany(filter, { $set: properties }, { upsert: true })
+      .then(() => resolve())
+      .catch((err: Error) => {
+        throw new Error(`db:updateMany:${collection} - ${err.message}`);
       });
   });
 };
@@ -84,9 +87,10 @@ export const deleteMany = async (
     client
       .db(dbName)
       .collection(collection)
-      .deleteMany(filter, (err) => {
-        if (err) throw new Error(`db:deleteMany: Failed for ${collection}!`);
-        return resolve();
+      .deleteMany(filter)
+      .then(() => resolve())
+      .catch((err: Error) => {
+        throw new Error(`db:deleteMany:${collection} - ${err.message}`);
       });
   });
 };
